@@ -1,0 +1,20 @@
+﻿Der Buildvorgang wurde am 01.03.2014 15:45:08 gestartet.
+     1>Projekt "C:\data\code\templates\SDLTemplate\build\win32\msvc10\game\game.vcxproj" auf Knoten "2", build Ziel(e).
+     1>InitializeBuildStatus:
+         "Debug\game.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       ClCompile:
+         Alle Ausgaben sind aktuell.
+       ManifestResourceCompile:
+         Alle Ausgaben sind aktuell.
+       Link:
+         Alle Ausgaben sind aktuell.
+       Manifest:
+         Alle Ausgaben sind aktuell.
+       FinalizeBuildStatus:
+         Die Datei "Debug\game.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von "Debug\game.lastbuildstate".
+     1>Die Erstellung des Projekts "C:\data\code\templates\SDLTemplate\build\win32\msvc10\game\game.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:00.20
