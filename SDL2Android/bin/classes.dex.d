@@ -1,0 +1,27 @@
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes.dex : \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\com\tutorial\game\BuildConfig.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\com\tutorial\game\HelloSDL2Activity.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\com\tutorial\game\R$attr.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\com\tutorial\game\R$drawable.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\com\tutorial\game\R$layout.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\com\tutorial\game\R$string.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\com\tutorial\game\R.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\DummyEdit.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$1.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$2.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$3.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$4.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$5.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$6.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$SDLCommandHandler.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity$ShowTextInputTask.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLActivity.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLGenericMotionListener_API12.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLInputConnection.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLJoystickHandler.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$RangeComparator.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$SDLJoystick.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLJoystickHandler_API12.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLMain.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLSurface$1.class \
+Z:\Indie\Development\Simulo\templates\SDL2Android\bin\classes\org\libsdl\app\SDLSurface.class \
