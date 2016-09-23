@@ -10,7 +10,6 @@ Z:\Indie\Development\Simulo\templates\SDL2Android\bin\res\drawable-mdpi\ic_launc
 Z:\Indie\Development\Simulo\templates\SDL2Android\bin\res\drawable-xhdpi\ic_launcher.png \
 Z:\Indie\Development\Simulo\templates\SDL2Android\bin\res\drawable-xxhdpi\ic_launcher.png \
 Z:\Indie\Development\Simulo\templates\SDL2Android\assets\52_hello_mobile \
-Z:\Indie\Development\Simulo\templates\SDL2Android\assets\52_hello_mobile\52_hello_mobile.cpp \
 Z:\Indie\Development\Simulo\templates\SDL2Android\assets\52_hello_mobile\hello.bmp \
 Z:\Indie\Development\Simulo\templates\SDL2Android\assets\52_hello_mobile\readme.txt \
 Z:\Indie\Development\Simulo\templates\SDL2Android\bin\AndroidManifest.xml \
