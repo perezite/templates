@@ -12,6 +12,8 @@
 /bin
 /gen
 /out
+/obj
+/libs
 
 # Gradle files
 /.gradle
