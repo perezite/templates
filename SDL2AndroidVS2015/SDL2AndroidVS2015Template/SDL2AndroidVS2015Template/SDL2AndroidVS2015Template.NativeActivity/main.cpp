@@ -15,6 +15,8 @@
 *
 */
 
+#include "../TrivialLibrary/TrivialLibrary.h"
+
 #define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "AndroidProject1.NativeActivity", __VA_ARGS__))
 #define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, "AndroidProject1.NativeActivity", __VA_ARGS__))
 
@@ -219,6 +221,8 @@ static void engine_handle_cmd(struct android_app* app, int32_t cmd) {
 void android_main(struct android_app* state) {
 	struct engine engine;
 
+	TrivialLibrary* trivialLibrary = new TrivialLibrary();
+
 	memset(&engine, 0, sizeof(engine));
 	state->userData = &engine;
 	state->onAppCmd = engine_handle_cmd;
@@ -278,6 +282,9 @@ void android_main(struct android_app* state) {
 			}
 		}
 
+		// library test
+		LOGI("Platform: %s", trivialLibrary->getPlatformABI());
+
 		if (engine.animating) {
 			// Done with events; draw next animation frame.
 			engine.state.angle += .01f;
@@ -289,5 +296,7 @@ void android_main(struct android_app* state) {
 			// is no need to do timing here.
 			engine_draw_frame(&engine);
 		}
+
+		delete trivialLibrary;
 	}
 }
