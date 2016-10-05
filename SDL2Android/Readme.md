@@ -1,14 +1,15 @@
-# Requirements
-Android SDK
-Android Native Development Kit
-Ant
-Java Development Kit
-
+# Content
+* Features a deployable NDK app
+* Features linking an external precompiled libaray (OpenGLEngine) to the app
 
 # Build and Run
+cd OpenGLEngine/jni
 ndk-build
-ant debug install
+Copy: OpenGLEngine/Engine/engine.h -> Application/jni/src/include
+Copy: OpenGLEngine/libs -> Application/jni/src/libs
+cd Application
+build-and-run.bat
 
-# References
-http://lazyfoo.net/tutorials/SDL/52_hello_mobile/android_windows/index.php
-https://www.youtube.com/watch?v=5_we0KZqDlU
+# Reference
+https://www.youtube.com/watch?v=iVir4N55YQg
+http://stackoverflow.com/questions/9026152/how-to-run-an-android-app-on-the-device-with-ant

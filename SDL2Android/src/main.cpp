@@ -3,6 +3,7 @@
 #include <time.h>
 
 #include "SDL.h"
+#include "engine.h"
 
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
@@ -67,8 +68,9 @@ int main(int argc, char *argv[])
 
 		SDL_Log("%d\n", count++);
 
-        glClearColor((rand() % 256) / 256.0f, (rand() % 256) / 256.0f, (rand() % 256) / 256.0f, 1);
-        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
+        /*glClearColor((rand() % 256) / 256.0f, (rand() % 256) / 256.0f, (rand() % 256) / 256.0f, 1);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);*/
+        clearScreen((rand() % 256) / 256.0f, (rand() % 256) / 256.0f, (rand() % 256) / 256.0f, 1);
         
 		SDL_GL_SwapWindow(window);
 		SDL_Delay(10);
