@@ -1,4 +1,5 @@
 @echo off
+cls
 
 rem # Init
 SET userParameter=%1
