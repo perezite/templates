@@ -197,7 +197,7 @@ static void display()
 }
 
 
-int main(int argc, char *argv[])
+int SDL_main(int argc, char *argv[])
 {    
 	SDL_Window* window = 0;
 	SDL_GLContext gl = 0;
