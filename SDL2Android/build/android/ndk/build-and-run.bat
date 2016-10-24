@@ -18,10 +18,10 @@ IF %debugMode%==1 (
 ) ELSE (
     @echo on
     call ndk-build
-    pause
     @echo off
 )
 cd ..
+pause
 
 rem # Install
 echo Install ...

@@ -4,8 +4,8 @@
 #include <math.h>
 #include <string>
 
-#include "SDL.h"
-#include "engine.h"
+#include "SDL2/SDL.h"
+#include "OpenGLEngine/engine.h"
 
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
