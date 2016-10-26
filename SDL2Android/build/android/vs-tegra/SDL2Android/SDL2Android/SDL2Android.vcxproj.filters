@@ -34,9 +34,6 @@
     <None Include="..\..\..\ndk\src\org\libsdl\app\SDLActivity.java">
       <Filter>src\org\libsdl\app</Filter>
     </None>
-    <None Include="..\..\..\ndk\jni\src\Android.mk">
-      <Filter>jni\src</Filter>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="jni">
@@ -74,9 +71,6 @@
     </Filter>
     <Filter Include="src\org\libsdl\app">
       <UniqueIdentifier>{51bc4678-263d-43a9-9700-aa2c45385b39}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="jni\src">
-      <UniqueIdentifier>{2afe4ce6-d04f-4f7f-9311-97645706ca0e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -72,7 +72,6 @@
     <None Include="..\..\..\ndk\default.properties" />
     <None Include="..\..\..\ndk\jni\Android.mk" />
     <None Include="..\..\..\ndk\jni\Application.mk" />
-    <None Include="..\..\..\ndk\jni\src\Android.mk" />
     <None Include="..\..\..\ndk\project.properties" />
     <None Include="..\..\..\ndk\res\drawable-hdpi\ic_launcher.png" />
     <None Include="..\..\..\ndk\res\drawable-mdpi\ic_launcher.png" />
