@@ -18,8 +18,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B7CFFD20-E679-4173-8C2A-DB1400DF6B14}</ProjectGuid>
-    <RootNamespace>SDL2Android</RootNamespace>
+    <ProjectGuid>{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}</ProjectGuid>
+    <RootNamespace>SDL2Test</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
@@ -41,45 +41,50 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Tegra-Android'">
+    <ClCompile>
+      <CppLanguageStandard>gnu++11</CppLanguageStandard>
+      <PreprocessorDefinitions>__ANDROID__</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../../include</AdditionalIncludeDirectories>
+    </ClCompile>
     <AntBuild>
-      <AntBuildPath>Z:\Indie\Development\Simulo\templates\SDL2Android\build\android\ndk</AntBuildPath>
+      <AntBuildPath>..\..\ndk</AntBuildPath>
+      <NativeLibDirectories>$(MSBuildProjectDirectory)\..\..\lib\OpenGLEngine\$(ArchAbi)</NativeLibDirectories>
+      <NativeLibDependencies>
+      </NativeLibDependencies>
     </AntBuild>
     <NdkBuild>
-      <NdkProjectPath>Z:\Indie\Development\Simulo\templates\SDL2Android\build\android\ndk</NdkProjectPath>
+      <NdkProjectPath>..\..\ndk</NdkProjectPath>
     </NdkBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
     <AntBuild>
-      <AntBuildPath>Z:\Indie\Development\Simulo\templates\SDL2Android\build\android\ndk</AntBuildPath>
+      <AntBuildPath>..\..\ndk</AntBuildPath>
     </AntBuild>
     <NdkBuild>
-      <NdkProjectPath>Z:\Indie\Development\Simulo\templates\SDL2Android\build\android\ndk</NdkProjectPath>
+      <NdkProjectPath>..\..\ndk</NdkProjectPath>
     </NdkBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Tegra-Android'">
     <AntBuild>
-      <AntBuildPath>Z:\Indie\Development\Simulo\templates\SDL2Android\build\android\ndk</AntBuildPath>
+      <AntBuildPath>..\..\ndk</AntBuildPath>
     </AntBuild>
     <NdkBuild>
-      <NdkProjectPath>Z:\Indie\Development\Simulo\templates\SDL2Android\build\android\ndk</NdkProjectPath>
+      <NdkProjectPath>..\..\ndk</NdkProjectPath>
     </NdkBuild>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\..\..\ndk\AndroidManifest.xml" />
-    <None Include="..\..\..\ndk\ant.properties" />
-    <None Include="..\..\..\ndk\build.properties" />
-    <None Include="..\..\..\ndk\build.xml" />
-    <None Include="..\..\..\ndk\default.properties" />
-    <None Include="..\..\..\ndk\jni\Android.mk" />
-    <None Include="..\..\..\ndk\jni\Application.mk" />
-    <None Include="..\..\..\ndk\project.properties" />
-    <None Include="..\..\..\ndk\res\drawable-hdpi\ic_launcher.png" />
-    <None Include="..\..\..\ndk\res\drawable-mdpi\ic_launcher.png" />
-    <None Include="..\..\..\ndk\res\drawable-xhdpi\ic_launcher.png" />
-    <None Include="..\..\..\ndk\res\drawable-xxhdpi\ic_launcher.png" />
-    <None Include="..\..\..\ndk\res\layout\main.xml" />
-    <None Include="..\..\..\ndk\res\values\strings.xml" />
-    <None Include="..\..\..\ndk\src\org\libsdl\app\SDLActivity.java" />
+    <None Include="..\..\ndk\AndroidManifest.xml" />
+    <None Include="..\..\ndk\default.properties" />
+    <None Include="..\..\ndk\jni\Android.mk" />
+    <None Include="..\..\ndk\jni\Application.mk" />
+    <None Include="..\..\ndk\res\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\SDL_android_main.c" />
+    <ClCompile Include="..\..\..\..\src\SDL_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <JCompile Include="..\..\ndk\src\com\example\hellojni\HelloJni.java" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
