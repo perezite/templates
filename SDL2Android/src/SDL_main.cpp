@@ -68,22 +68,22 @@ static int init() {
     glDisable(GL_DEPTH_TEST);
 
     char vShaderStr[] =
-            "attribute vec4 a_vPosition;   \n"
-            "attribute vec4 a_vColor;	   \n"
-            "varying vec4 v_vColor;		   \n"
-            "void main()                   \n"
-            "{                             \n"
-            "   gl_Position = a_vPosition; \n"
-            "	v_vColor = a_vColor;       \n"
-            "}                             \n";
+        "attribute vec4 a_vPosition;   \n"
+        "attribute vec4 a_vColor;	   \n"
+        "varying vec4 v_vColor;		   \n"
+        "void main()                   \n"
+        "{                             \n"
+        "   gl_Position = a_vPosition; \n"
+        "	v_vColor = a_vColor;       \n"
+        "}                             \n";
 
     char fShaderStr[] =
-            "precision mediump float;                   \n"
-            "varying vec4 v_vColor;		 				\n"
-            "void main()                                \n"
-            "{                                          \n"
-            "  gl_FragColor = v_vColor;					\n"
-            "}                                          \n";
+        "precision mediump float;                   \n"
+        "varying vec4 v_vColor;		 				\n"
+        "void main()                                \n"
+        "{                                          \n"
+        "  gl_FragColor = v_vColor;					\n"
+        "}                                          \n";
 
     GLuint vertexShader;
     GLuint fragmentShader;
