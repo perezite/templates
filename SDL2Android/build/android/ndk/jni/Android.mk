@@ -21,7 +21,8 @@ LOCAL_MODULE := main
 MY_CODE_PATH := ../../../../src
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../include
 LOCAL_SRC_FILES := $(MY_CODE_PATH)/SDL_android_main.c \
-    $(MY_CODE_PATH)/SDL_main.cpp
+    $(MY_CODE_PATH)/SDL_main.cpp \
+    $(MY_CODE_PATH)/CheesyHelper.cpp
 LOCAL_SHARED_LIBRARIES := SDL2 openGLSharedLibrary
 LOCAL_LDLIBS := -lGLESv1_CM -lGLESv2 -llog
 include $(BUILD_SHARED_LIBRARY)

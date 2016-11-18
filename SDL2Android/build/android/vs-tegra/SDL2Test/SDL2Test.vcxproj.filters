@@ -58,5 +58,13 @@
     <ClCompile Include="..\..\..\..\src\SDL_android_main.c">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\..\src\CheesyHelper.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\CheesyHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -4,12 +4,13 @@
 #include <math.h>
 #include <string>
 
+#include "CheesyHelper.h"
+
 #include "SDL2/SDL.h"
 #include "OpenGLEngine/engine.h"
 
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
-
 #include <android/log.h>
 
 #define _USE_MATH_DEFINES
@@ -209,7 +210,8 @@ int SDL_main(int argc, char *argv[])
     }
     
     string s = "This is a std::string";
-    SDL_Log("%s\n", s.c_str());
+    // SDL_Log("%s\n", s.c_str());
+	CheesyHelper::Log("%s\n", s.c_str());
 
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_VERBOSE);
 
@@ -230,7 +232,8 @@ int SDL_main(int argc, char *argv[])
 
     if (window == 0)
     {
-        SDL_Log("Failed to create window.");
+        // SDL_Log("Failed to create window.");
+        CheesyHelper::Log("Failed to created window.");
         SDL_Quit();
         return 1;
     }
@@ -252,7 +255,8 @@ int SDL_main(int argc, char *argv[])
             }
         }
 
-        SDL_Log("%d\n", count++);
+        // SDL_Log("%d\n", count++);
+        CheesyHelper::Log("%d", count++);
 
         display();
              

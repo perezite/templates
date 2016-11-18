@@ -80,11 +80,15 @@
     <None Include="..\..\ndk\res\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\CheesyHelper.cpp" />
     <ClCompile Include="..\..\..\..\src\SDL_android_main.c" />
     <ClCompile Include="..\..\..\..\src\SDL_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <JCompile Include="..\..\ndk\src\com\example\hellojni\HelloJni.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\src\CheesyHelper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
