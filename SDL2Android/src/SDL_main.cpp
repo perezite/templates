@@ -1,3 +1,5 @@
+#ifdef __ANDROID__
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
@@ -211,7 +213,7 @@ int SDL_main(int argc, char *argv[])
     
     string s = "This is a std::string";
     // SDL_Log("%s\n", s.c_str());
-	CheesyHelper::Log("%s\n", s.c_str());
+    CheesyHelper::Log("%s\n", s.c_str());
 
     SDL_LogSetAllPriority(SDL_LOG_PRIORITY_VERBOSE);
 
@@ -266,3 +268,30 @@ int SDL_main(int argc, char *argv[])
 
     exit(0);
 }
+
+#endif
+
+#ifdef WIN32
+
+#include "SDL2/SDL.h"
+
+#include <iostream>
+
+#undef main
+
+int main(int argc, char* args[])
+{
+    if (0 != SDL_Init(SDL_INIT_VIDEO))
+    {
+        fprintf(stderr, "Unable to initialize SDL: %s\n", SDL_GetError());
+        std::cin.get();
+        return 1;
+    }
+
+    std::cout << "Press any key to continue..." << std::endl;
+    std::cin.get();
+    return 0;
+
+}
+
+#endif

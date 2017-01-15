@@ -1,3 +1,5 @@
+#ifdef __ANDROID__
+
 #include "CheesyHelper.h"
 
 #include <stdarg.h>
@@ -11,3 +13,5 @@ void CheesyHelper::Log(const char* fmt, ...)
 	SDL_Log(fmt, args);
 	va_end(args);
 }
+
+#endif

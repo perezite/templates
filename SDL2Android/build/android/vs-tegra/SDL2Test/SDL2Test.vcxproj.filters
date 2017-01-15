@@ -30,25 +30,25 @@
     <Filter Include="build\src">
       <UniqueIdentifier>{9c607aad-6511-43d5-a24a-f7e971ef0d2d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="build\src\com">
-      <UniqueIdentifier>{076a8bac-a0fa-4bad-826f-3cc4c141cecb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="build\src\com\example">
-      <UniqueIdentifier>{2a8a84e9-7241-49f1-98c1-d5e064740123}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="build\src\com\example\hellojni">
-      <UniqueIdentifier>{e199c3f5-ac15-4836-bf65-71e886627885}</UniqueIdentifier>
-    </Filter>
     <Filter Include="build\jni">
       <UniqueIdentifier>{827fb5ef-3876-4d47-a695-e4dbb77dccb0}</UniqueIdentifier>
     </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{b6394026-fd6c-446d-ac98-8a334b55f775}</UniqueIdentifier>
     </Filter>
+    <Filter Include="build\src\org">
+      <UniqueIdentifier>{6ae5d0cc-ee2a-4f90-9435-be732c22208e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="build\src\org\libsdl">
+      <UniqueIdentifier>{64964ae1-662d-457a-a7f0-b91c55b500a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="build\src\org\libsdl\app">
+      <UniqueIdentifier>{891970ee-17b6-4be1-8add-e82e657ad42f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <JCompile Include="..\..\ndk\src\com\example\hellojni\HelloJni.java">
-      <Filter>build\src\com\example\hellojni</Filter>
+    <JCompile Include="..\..\ndk\src\org\libsdl\app\SDLActivity.java">
+      <Filter>build\src\org\libsdl\app</Filter>
     </JCompile>
   </ItemGroup>
   <ItemGroup>
