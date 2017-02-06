@@ -31,7 +31,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}</ProjectGuid>
-    <RootNamespace>SDL2Test</RootNamespace>
+    <RootNamespace>SDL2CrossPlatform</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -74,48 +74,48 @@
     <ClCompile>
       <CppLanguageStandard>gnu++11</CppLanguageStandard>
       <PreprocessorDefinitions>__ANDROID__</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../android/include</AdditionalIncludeDirectories>
     </ClCompile>
     <AntBuild>
-      <AntBuildPath>..\..\ndk</AntBuildPath>
-      <NativeLibDirectories>$(MSBuildProjectDirectory)\..\..\lib\OpenGLEngine\$(ArchAbi)</NativeLibDirectories>
+      <AntBuildPath>..\..\android\ndk</AntBuildPath>
+      <NativeLibDirectories>$(MSBuildProjectDirectory)\..\..\android\lib\OpenGLEngine\$(ArchAbi)</NativeLibDirectories>
       <NativeLibDependencies>
       </NativeLibDependencies>
     </AntBuild>
     <NdkBuild>
-      <NdkProjectPath>..\..\ndk</NdkProjectPath>
+      <NdkProjectPath>..\..\android\ndk</NdkProjectPath>
     </NdkBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Tegra-Android'">
     <AntBuild>
-      <AntBuildPath>..\..\ndk</AntBuildPath>
+      <AntBuildPath>..\..\android\ndk</AntBuildPath>
     </AntBuild>
     <NdkBuild>
-      <NdkProjectPath>..\..\ndk</NdkProjectPath>
+      <NdkProjectPath>..\..\android\ndk</NdkProjectPath>
     </NdkBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Tegra-Android'">
     <AntBuild>
-      <AntBuildPath>..\..\ndk</AntBuildPath>
+      <AntBuildPath>..\..\android\ndk</AntBuildPath>
     </AntBuild>
     <NdkBuild>
-      <NdkProjectPath>..\..\ndk</NdkProjectPath>
+      <NdkProjectPath>..\..\android\ndk</NdkProjectPath>
     </NdkBuild>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\..\include;..\..\include\SDL2;..\..\include\glew-1.5.8;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\..\windows\include;..\..\windows\include\SDL2;..\..\windows\include\glew-1.5.8;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\..\lib\SDL2\win32;..\..\lib\glew-1.5.8;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\windows\lib\SDL2;..\..\windows\lib\glew-1.5.8;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;opengl32.lib;glew32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)..\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Link>
-      <AdditionalLibraryDirectories>..\..\lib\SDL2\win32;..\..\lib\glew-1.5.8;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\windows\lib\SDL2;..\..\windows\lib\glew-1.5.8;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;opengl32.lib;glew32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)..\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
@@ -125,7 +125,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Shipping|Win32'">
     <Link>
-      <AdditionalLibraryDirectories>..\..\lib\SDL2\win32;..\..\lib\glew-1.5.8;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\windows\lib\SDL2;..\..\windows\lib\glew-1.5.8;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2_image.lib;opengl32.lib;glew32.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(SolutionDir)..\bin\$(TargetName)$(TargetExt)</OutputFile>
     </Link>
@@ -134,22 +134,22 @@
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="..\..\ndk\AndroidManifest.xml" />
-    <None Include="..\..\ndk\default.properties" />
-    <None Include="..\..\ndk\jni\Android.mk" />
-    <None Include="..\..\ndk\jni\Application.mk" />
-    <None Include="..\..\ndk\res\values\strings.xml" />
+    <None Include="..\..\android\ndk\AndroidManifest.xml" />
+    <None Include="..\..\android\ndk\default.properties" />
+    <None Include="..\..\android\ndk\jni\Android.mk" />
+    <None Include="..\..\android\\ndk\jni\Application.mk" />
+    <None Include="..\..\android\\ndk\res\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\src\CheesyHelper.cpp" />
-    <ClCompile Include="..\..\..\..\src\SDL_android_main.c" />
-    <ClCompile Include="..\..\..\..\src\SDL_main.cpp" />
+    <ClCompile Include="..\..\..\src\CheesyHelper.cpp" />
+    <ClCompile Include="..\..\..\src\SDL_android_main.c" />
+    <ClCompile Include="..\..\..\src\SDL_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <JCompile Include="..\..\ndk\src\org\libsdl\app\SDLActivity.java" />
+    <JCompile Include="..\..\android\ndk\src\org\libsdl\app\SDLActivity.java" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\src\CheesyHelper.h" />
+    <ClInclude Include="..\..\..\src\CheesyHelper.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

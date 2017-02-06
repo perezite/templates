@@ -1,20 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <None Include="..\..\ndk\jni\Android.mk">
+    <None Include="..\..\android\ndk\jni\Android.mk">
       <Filter>build\jni</Filter>
     </None>
-    <None Include="..\..\ndk\jni\Application.mk">
+    <None Include="..\..\android\ndk\AndroidManifest.xml">
+      <Filter>build</Filter>
+    </None>
+    <None Include="..\..\android\ndk\default.properties">
+      <Filter>build</Filter>
+    </None>
+    <None Include="..\..\android\\ndk\jni\Application.mk">
       <Filter>build\jni</Filter>
     </None>
-    <None Include="..\..\ndk\res\values\strings.xml">
+    <None Include="..\..\android\\ndk\res\values\strings.xml">
       <Filter>build\res\values</Filter>
-    </None>
-    <None Include="..\..\ndk\AndroidManifest.xml">
-      <Filter>build</Filter>
-    </None>
-    <None Include="..\..\ndk\default.properties">
-      <Filter>build</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -47,24 +47,24 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <JCompile Include="..\..\ndk\src\org\libsdl\app\SDLActivity.java">
-      <Filter>build\src\org\libsdl\app</Filter>
-    </JCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\src\SDL_main.cpp">
+    <ClCompile Include="..\..\..\src\SDL_main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\SDL_android_main.c">
+    <ClCompile Include="..\..\..\src\SDL_android_main.c">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\CheesyHelper.cpp">
+    <ClCompile Include="..\..\..\src\CheesyHelper.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\src\CheesyHelper.h">
+    <ClInclude Include="..\..\..\src\CheesyHelper.h">
       <Filter>src</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <JCompile Include="..\..\android\ndk\src\org\libsdl\app\SDLActivity.java">
+      <Filter>build\src\org\libsdl\app</Filter>
+    </JCompile>
   </ItemGroup>
 </Project>

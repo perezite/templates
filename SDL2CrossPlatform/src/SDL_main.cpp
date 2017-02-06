@@ -288,6 +288,7 @@ int main(int argc, char* args[])
         return 1;
     }
 
+    std::cout << "Hello world!" << std::endl;
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.get();
     return 0;
