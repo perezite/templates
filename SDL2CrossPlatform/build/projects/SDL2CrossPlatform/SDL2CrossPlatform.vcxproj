@@ -74,7 +74,7 @@
     <ClCompile>
       <CppLanguageStandard>gnu++11</CppLanguageStandard>
       <PreprocessorDefinitions>__ANDROID__</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../../android/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../../android/include;../../common/include</AdditionalIncludeDirectories>
     </ClCompile>
     <AntBuild>
       <AntBuildPath>..\..\android\ndk</AntBuildPath>

@@ -273,55 +273,211 @@ int SDL_main(int argc, char *argv[])
 
 #ifdef WIN32
 
-#define NO_SDL_GLEXT
-#include "SDL2/SDL_opengl.h"
-#include "SDL2/SDL.h"
+//Using SDL, SDL OpenGL, GLEW, standard IO, and strings
+#include <SDL.h>
+#include <gl\glew.h>
+#include <SDL_opengl.h>
+#include <gl\glu.h>
+#include <stdio.h>
+#include <string>
 
-#include <iostream>
+
+// shader program
+GLuint gProgramID = 0;
+GLint gVertexPos2DLocation = -1;
+GLuint gVBO = 0;
+GLuint gIBO = 0;
+
+bool initGL()
+{
+	bool success = true;
+
+	gProgramID = glCreateProgram();
+
+	GLuint vertexShader = glCreateShader(GL_VERTEX_SHADER);
+	const GLchar* vertexShaderSource[] =
+	{
+		"#version 140\nin vec2 LVertexPos2D; void main() { gl_Position = vec4( LVertexPos2D.x, LVertexPos2D.y, 0, 1 ); }"
+	};
+	glShaderSource(vertexShader, 1, vertexShaderSource, NULL);
+	glCompileShader(vertexShader);
+	GLint vShaderCompiled = GL_FALSE;
+	glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &vShaderCompiled);
+	if (vShaderCompiled != GL_TRUE)
+	{
+		printf("Unable to compile vertex shader %d!\n", vertexShader);
+		success = false;
+	}
+	else
+	{
+		glAttachShader(gProgramID, vertexShader);
+		GLuint fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+		const GLchar* fragmentShaderSource[] =
+		{
+			"#version 140\nout vec4 LFragment; void main() { LFragment = vec4( 1.0, 1.0, 1.0, 1.0 ); }"
+		};
+
+		glShaderSource(fragmentShader, 1, fragmentShaderSource, NULL);
+		glCompileShader(fragmentShader);
+		GLint fShaderCompiled = GL_FALSE;
+		glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &fShaderCompiled);
+		if (fShaderCompiled != GL_TRUE)
+		{
+			printf("Unable to compile fragment shader %d!\n", fragmentShader);
+			success = false;
+		}
+		else
+		{
+			glAttachShader(gProgramID, fragmentShader);
+			glLinkProgram(gProgramID);
+			GLint programSuccess = GL_TRUE;
+			glGetProgramiv(gProgramID, GL_LINK_STATUS, &programSuccess);
+			if (programSuccess != GL_TRUE)
+			{
+				printf("Error linking program %d!\n", gProgramID);
+				success = false;
+			}
+			else
+			{
+				//Get vertex attribute location
+				gVertexPos2DLocation = glGetAttribLocation(gProgramID, "LVertexPos2D");
+				if (gVertexPos2DLocation == -1)
+				{
+					printf("LVertexPos2D is not a valid glsl program variable!\n");
+					success = false;
+				}
+				else
+				{
+					glClearColor(0.f, 0.f, 0.f, 1.f);
+
+					GLfloat vertexData[] =
+					{
+						-0.5f, -0.5f,
+						0.5f, -0.5f,
+						0.5f,  0.5f,
+						-0.5f,  0.5f
+					};
+
+					GLuint indexData[] = { 0, 1, 2, 3 };
+
+					glGenBuffers(1, &gVBO);
+					glBindBuffer(GL_ARRAY_BUFFER, gVBO);
+					glBufferData(GL_ARRAY_BUFFER, 2 * 4 * sizeof(GLfloat), vertexData, GL_STATIC_DRAW);
+					glGenBuffers(1, &gIBO);
+					glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, gIBO);
+					glBufferData(GL_ELEMENT_ARRAY_BUFFER, 4 * sizeof(GLuint), indexData, GL_STATIC_DRAW);
+				}
+			}
+		}
+	}
+
+	return success;
+}
+
+bool init(SDL_Window** sdlWindow, SDL_GLContext* glContext)
+{
+	bool success = true;
+	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+	{
+		printf("SDL could not initialize! SDL Error: %s\n", SDL_GetError());
+		success = false;
+	}
+	else
+	{
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 3);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
+		SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
+
+		*sdlWindow = SDL_CreateWindow("SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 400, 400, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+		if (sdlWindow == NULL)
+		{
+			printf("Window could not be created! SDL Error: %s\n", SDL_GetError());
+			success = false;
+		}
+		else
+		{
+			*glContext = SDL_GL_CreateContext(*sdlWindow);
+			if (glContext == NULL)
+			{
+				printf("OpenGL context could not be created! SDL Error: %s\n", SDL_GetError());
+				success = false;
+			}
+			else
+			{
+				GLenum glewError = glewInit();
+				if (glewError != GLEW_OK)
+				{
+					printf("Error initializing GLEW! %s\n", glewGetErrorString(glewError));
+				}
+
+				if (SDL_GL_SetSwapInterval(1) < 0)
+				{
+					printf("Warning: Unable to set VSync! SDL Error: %s\n", SDL_GetError());
+				}
+
+				if (!initGL())
+				{
+					printf("Unable to initialize OpenGL!\n");
+					success = false;
+				}
+			}
+		}
+	}
+
+	return success;
+}
+
+void render()
+{
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	glUseProgram(gProgramID);
+	glEnableVertexAttribArray(gVertexPos2DLocation);
+	glBindBuffer(GL_ARRAY_BUFFER, gVBO);
+	glVertexAttribPointer(gVertexPos2DLocation, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(GLfloat), NULL);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, gIBO);
+	glDrawElements(GL_TRIANGLE_FAN, 4, GL_UNSIGNED_INT, NULL);
+	glDisableVertexAttribArray(gVertexPos2DLocation);
+
+	glUseProgram(NULL);
+}
+
+void close(SDL_Window* sdlWindow)
+{
+	glDeleteProgram(gProgramID);
+	SDL_DestroyWindow(sdlWindow);
+	SDL_Quit();
+}
 
 #undef main
-
 int main(int argc, char* args[])
 {
-    // initialize SDL video
-    if (0 != SDL_Init(SDL_INIT_VIDEO))
-    {
-        fprintf(stderr, "Unable to initialize SDL: %s\n", SDL_GetError());
-        std::cin.get();
-        return 1;
-    }
+	SDL_Window* sdlWindow;
+	SDL_GLContext glContext;
 
-    // create window
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
-    SDL_Window* sdlWindow = 
-        SDL_CreateWindow("SDL2CrossPlatform", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 400, 400, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+	init(&sdlWindow, &glContext);
 
-    // initialize OpenGL
-    SDL_GLContext openGLContext = SDL_GL_CreateContext(sdlWindow);
-    SDL_GL_SetSwapInterval(1);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glMatrixMode(GL_MODELVIEW);
-    glLoadIdentity();
-    glClearColor(0, 0, 0, 1);
-    glClear(GL_COLOR_BUFFER_BIT);
-    SDL_GL_SwapWindow(sdlWindow);
+	bool quit = false;
+	SDL_Event e;
 
-	// draw quad
-	glColor3f(1.0f, 1.0f, 1.0f);
-	glRectf(-0.5f, 0.5f, 0.5f, -0.5f);
-	SDL_GL_SwapWindow(sdlWindow);
+	while (!quit)
+	{
+		while (SDL_PollEvent(&e) != 0)
+		{
+			if (e.type == SDL_QUIT)
+			{
+				quit = true;
+			}
+		}
 
-    // wait for key press
-    std::cout << "Press any key to continue..." << std::endl;
-    std::cin.get();
+		render();
 
-    // destroy window
-    SDL_QuitSubSystem(SDL_INIT_VIDEO);
-    SDL_DestroyWindow(sdlWindow);
+		SDL_GL_SwapWindow(sdlWindow);
+	}
 
-    return 0;
+
+	close(sdlWindow);
+	return 0;
 }
 
 #endif
