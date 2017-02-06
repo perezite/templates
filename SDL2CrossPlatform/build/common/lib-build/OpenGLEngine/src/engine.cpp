@@ -1,7 +1,12 @@
 #include "engine.h"
 
-#include <GLES2/gl2.h>
-#include <GLES2/gl2ext.h>
+#ifdef ANDROID
+	#include <GLES2/gl2.h>
+	#include <GLES2/gl2ext.h>
+#endif
+#ifdef WIN32
+#include <GL/gl.h>
+#endif
 
 int clearScreen(const float r, const float g, const float b, const float a)
 {
