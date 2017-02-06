@@ -273,6 +273,8 @@ int SDL_main(int argc, char *argv[])
 
 #ifdef WIN32
 
+#define NO_SDL_GLEXT
+#include "SDL2/SDL_opengl.h"
 #include "SDL2/SDL.h"
 
 #include <iostream>
@@ -281,6 +283,7 @@ int SDL_main(int argc, char *argv[])
 
 int main(int argc, char* args[])
 {
+    // initialize SDL video
     if (0 != SDL_Init(SDL_INIT_VIDEO))
     {
         fprintf(stderr, "Unable to initialize SDL: %s\n", SDL_GetError());
@@ -288,11 +291,37 @@ int main(int argc, char* args[])
         return 1;
     }
 
-    std::cout << "Hello world!" << std::endl;
+    // create window
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 2);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 1);
+    SDL_Window* sdlWindow = 
+        SDL_CreateWindow("SDL2CrossPlatform", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 400, 400, SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+
+    // initialize OpenGL
+    SDL_GLContext openGLContext = SDL_GL_CreateContext(sdlWindow);
+    SDL_GL_SetSwapInterval(1);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+    glClearColor(0, 0, 0, 1);
+    glClear(GL_COLOR_BUFFER_BIT);
+    SDL_GL_SwapWindow(sdlWindow);
+
+	// draw quad
+	glColor3f(1.0f, 1.0f, 1.0f);
+	glRectf(-0.5f, 0.5f, 0.5f, -0.5f);
+	SDL_GL_SwapWindow(sdlWindow);
+
+    // wait for key press
     std::cout << "Press any key to continue..." << std::endl;
     std::cin.get();
-    return 0;
 
+    // destroy window
+    SDL_QuitSubSystem(SDL_INIT_VIDEO);
+    SDL_DestroyWindow(sdlWindow);
+
+    return 0;
 }
 
 #endif
