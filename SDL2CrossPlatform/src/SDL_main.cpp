@@ -273,6 +273,7 @@ int SDL_main(int argc, char *argv[])
 #ifdef WIN32
 
 //Using SDL, SDL OpenGL, GLEW, standard IO, and strings
+#include "engine.h"
 #include <SDL.h>
 #include <gl\glew.h>
 #include <SDL_opengl.h>
@@ -407,8 +408,9 @@ static void display()
     static const int32_t VertexSize = sizeof(GLfloat) * (PositionNumElements + ColorNumElements);
 
     glViewport(0, 0, 400, 400);
-    glClearColor(0.95f, 0.95f, 0.95f, 1.0f); 
-    glClear(GL_COLOR_BUFFER_BIT);
+    /*glClearColor(0.95f, 0.95f, 0.95f, 1.0f); 
+    glClear(GL_COLOR_BUFFER_BIT);*/
+	clearScreen(0.95f, 0.95f, 0.95f, 1.0f);
     glUseProgram(g_shaderProgram);
     glEnableVertexAttribArray(POSITION_PARAMETER_INDEX);
     glEnableVertexAttribArray(COLOR_PARAMETER_INDEX);
