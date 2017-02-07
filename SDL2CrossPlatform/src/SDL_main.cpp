@@ -1,11 +1,5 @@
 #ifdef __ANDROID__
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <time.h>
-#include <math.h>
-#include <string>
-
 #include "CheesyHelper.h"
 
 #include "SDL2/SDL.h"
@@ -13,12 +7,13 @@
 
 #include <GLES2/gl2.h>
 #include <GLES2/gl2ext.h>
-#include <android/log.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <math.h>
+#include <string>
 
 #define _USE_MATH_DEFINES
-
-#define LOGI(...) ((void)__android_log_print(ANDROID_LOG_INFO, "native-activity", __VA_ARGS__))
-#define LOGW(...) ((void)__android_log_print(ANDROID_LOG_WARN, "native-activity", __VA_ARGS__))
 
 using namespace std;
 
@@ -55,7 +50,7 @@ GLuint LoadShader(const char *shaderSrc, GLenum type)
             {
                 char* infoLog = new char[infoLen];
                 glGetShaderInfoLog(shader, infoLen, NULL, infoLog);
-                LOGW("Error compiling shader:\n%s\n", infoLog);
+				CheesyHelper::Log("Error compiling shader:\n%s\n", infoLog);
                 delete[] infoLog;
             }
             glDeleteShader(shader);
@@ -71,16 +66,18 @@ static int init() {
     glDisable(GL_DEPTH_TEST);
 
     char vShaderStr[] =
-        "attribute vec4 a_vPosition;   \n"
-        "attribute vec4 a_vColor;	   \n"
-        "varying vec4 v_vColor;		   \n"
-        "void main()                   \n"
-        "{                             \n"
-        "   gl_Position = a_vPosition; \n"
-        "	v_vColor = a_vColor;       \n"
-        "}                             \n";
+		"#version 130					\n"
+        "attribute vec4 a_vPosition;	\n"
+        "attribute vec4 a_vColor;		\n"
+        "varying vec4 v_vColor;			\n"
+        "void main()					\n"
+        "{								\n"
+        "   gl_Position = a_vPosition;	\n"
+        "	v_vColor = a_vColor;		\n"
+        "}								\n";
 
     char fShaderStr[] =
+		"#version 130								\n"
         "precision mediump float;                   \n"
         "varying vec4 v_vColor;		 				\n"
         "void main()                                \n"
@@ -125,7 +122,7 @@ static int init() {
         {
             char* infoLog = new char[infoLen];
             glGetProgramInfoLog(shaderProgram, infoLen, NULL, infoLog);
-            LOGW("Error linking program:\n%s\n", infoLog);
+			CheesyHelper::Log("Error linking program:\n%s\n", infoLog);
 
             delete[] infoLog;
         }
@@ -408,8 +405,6 @@ static void display()
     static const int32_t VertexSize = sizeof(GLfloat) * (PositionNumElements + ColorNumElements);
 
     glViewport(0, 0, 400, 400);
-    /*glClearColor(0.95f, 0.95f, 0.95f, 1.0f); 
-    glClear(GL_COLOR_BUFFER_BIT);*/
 	clearScreen(0.95f, 0.95f, 0.95f, 1.0f);
     glUseProgram(g_shaderProgram);
     glEnableVertexAttribArray(POSITION_PARAMETER_INDEX);
