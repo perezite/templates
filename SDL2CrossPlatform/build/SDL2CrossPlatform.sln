@@ -11,8 +11,6 @@ Global
 		Debug|Win32 = Debug|Win32
 		Release|Android = Release|Android
 		Release|Win32 = Release|Win32
-		Shipping|Android = Shipping|Android
-		Shipping|Win32 = Shipping|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Debug|Android.ActiveCfg = Debug|Tegra-Android
@@ -23,10 +21,6 @@ Global
 		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Release|Android.Build.0 = Release|Tegra-Android
 		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Release|Win32.ActiveCfg = Release|Win32
 		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Release|Win32.Build.0 = Release|Win32
-		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Shipping|Android.ActiveCfg = Shipping|Tegra-Android
-		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Shipping|Android.Build.0 = Shipping|Tegra-Android
-		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Shipping|Win32.ActiveCfg = Shipping|Win32
-		{B4D4ABC4-22E6-4BE2-B6BD-02AB117E9C8F}.Shipping|Win32.Build.0 = Shipping|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
