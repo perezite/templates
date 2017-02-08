@@ -73,7 +73,6 @@ static int init() {
     glDisable(GL_DEPTH_TEST);
 
     char vShaderStr[] =
-        "#version 130					\n"
         "attribute vec4 a_vPosition;	\n"
         "attribute vec4 a_vColor;		\n"
         "varying vec4 v_vColor;			\n"
@@ -84,7 +83,6 @@ static int init() {
         "}								\n";
 
     char fShaderStr[] =
-        "#version 130								\n"
         "precision mediump float;                   \n"
         "varying vec4 v_vColor;		 				\n"
         "void main()                                \n"
@@ -147,7 +145,7 @@ static void display()
     static const int32_t ColorNumElements = 4;
     static const int32_t VertexSize = sizeof(GLfloat) * (PositionNumElements + ColorNumElements);
 
-    glViewport(0, 0, height, width);
+    glViewport(0, 0, width, height);
 
     // Just fill the screen with a color.
     clearScreen(0.95f, 0.95f, 0.95f, 1.0f); // call from the external opengl engine
