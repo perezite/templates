@@ -147,10 +147,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Content Include="assets\52_hello_mobile\hello.bmp" />
-    <Content Include="libs\armeabi-v7a\libmain.so" />
-    <Content Include="libs\armeabi-v7a\libSDL2.so" />
-    <Content Include="libs\armeabi\libmain.so" />
-    <Content Include="libs\armeabi\libSDL2.so" />
     <Content Include="libs\x86\libmain.so" />
     <Content Include="libs\x86\libSDL2.so" />
     <Content Include="proguard-project.txt" />
