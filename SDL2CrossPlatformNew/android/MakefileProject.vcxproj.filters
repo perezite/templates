@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="jni">
+      <UniqueIdentifier>{98936a65-da76-45a9-b330-acfe8be6cbc7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{eb724ec9-0ad6-4638-90c5-4d509455a8ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jni\src">
+      <UniqueIdentifier>{490b28fe-8c4c-41ec-8d73-9afb977fd49c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="jni\Application.mk">
+      <Filter>jni</Filter>
+    </None>
+    <None Include="jni\src\Android.mk">
+      <Filter>jni\src</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\52_hello_mobile.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
