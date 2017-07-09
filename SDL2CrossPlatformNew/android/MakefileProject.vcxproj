@@ -39,7 +39,12 @@
     <None Include="jni\src\Android.mk" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\52_hello_mobile.cpp" />
+    <ClCompile Include="..\src\CheesyHelper.cpp" />
+    <ClCompile Include="..\src\SDL_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\CheesyHelper.h" />
+    <ClInclude Include="..\src\SDL_main.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{17c866ab-7b80-4eb4-b0bb-45f1e68bfe3d}</ProjectGuid>

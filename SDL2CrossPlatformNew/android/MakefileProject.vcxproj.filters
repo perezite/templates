@@ -20,8 +20,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\src\52_hello_mobile.cpp">
+    <ClCompile Include="..\src\CheesyHelper.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\SDL_main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\CheesyHelper.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\SDL_main.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
