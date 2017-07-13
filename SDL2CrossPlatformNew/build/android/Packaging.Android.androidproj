@@ -6,6 +6,21 @@
       <Platform>x86</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="AndroidManifest.xml" />
+    <Content Include="build.xml" />
+    <Content Include="libs\x86\libSDL2.so" />
+    <Content Include="res\values\strings.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <JavaCompile Include="src\org\libsdl\app\SDLActivity.java" />
+  </ItemGroup>
+  <ItemGroup>
+    <AntProjectPropertiesFile Include="project.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\projects\Application\Application.vcxproj" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <RootNamespace>Application</RootNamespace>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
@@ -15,7 +30,7 @@
   <Import Project="$(AndroidTargetsPath)\Android.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
-    <TargetName>hello-jni</TargetName>
+    <TargetName>Application</TargetName>
     <AndroidAPILevel>android-15</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.props" />
@@ -27,25 +42,6 @@
       <AndroidAppLibName>Application</AndroidAppLibName>
     </AntPackage>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <Content Include="libs\x86\libSDL2.so" />
-    <Content Include="res\values\strings.xml" />
-    <AntBuildXml Include="build.xml">
-      <SubType>Designer</SubType>
-    </AntBuildXml>
-    <AndroidManifest Include="AndroidManifest.xml">
-      <SubType>Designer</SubType>
-    </AndroidManifest>
-    <AntProjectPropertiesFile Include="project.properties" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\projects\Application\Application.vcxproj">
-      <Project>{71ba3082-afac-433b-b51c-17e3c244fea7}</Project>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <JavaCompile Include="src\org\libsdl\app\SDLActivity.java" />
-  </ItemGroup>
   <Import Project="$(AndroidTargetsPath)\Android.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>
