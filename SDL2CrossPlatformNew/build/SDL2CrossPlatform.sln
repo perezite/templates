@@ -9,12 +9,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "projects\App
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
 		Debug|x86 = Debug|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B468758-79FA-44EF-841B-9239D6F07FAC}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3B468758-79FA-44EF-841B-9239D6F07FAC}.Debug|ARM.Build.0 = Debug|ARM
+		{3B468758-79FA-44EF-841B-9239D6F07FAC}.Debug|ARM.Deploy.0 = Debug|ARM
 		{3B468758-79FA-44EF-841B-9239D6F07FAC}.Debug|x86.ActiveCfg = Debug|x86
 		{3B468758-79FA-44EF-841B-9239D6F07FAC}.Debug|x86.Build.0 = Debug|x86
 		{3B468758-79FA-44EF-841B-9239D6F07FAC}.Debug|x86.Deploy.0 = Debug|x86
+		{71BA3082-AFAC-433B-B51C-17E3C244FEA7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{71BA3082-AFAC-433B-B51C-17E3C244FEA7}.Debug|ARM.Build.0 = Debug|ARM
 		{71BA3082-AFAC-433B-B51C-17E3C244FEA7}.Debug|x86.ActiveCfg = Debug|x86
 		{71BA3082-AFAC-433B-B51C-17E3C244FEA7}.Debug|x86.Build.0 = Debug|x86
 	EndGlobalSection
