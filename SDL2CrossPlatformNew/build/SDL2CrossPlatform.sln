@@ -7,6 +7,8 @@ Project("{39E2626F-3545-4960-A6E8-258AD8476CE5}") = "Packaging.Android", "androi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "projects\Application\Application.vcxproj", "{71BA3082-AFAC-433B-B51C-17E3C244FEA7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base", "projects\Base\Base.vcxproj", "{2C2FA788-3E36-4359-B838-48CB26FC5499}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
@@ -23,6 +25,10 @@ Global
 		{71BA3082-AFAC-433B-B51C-17E3C244FEA7}.Debug|ARM.Build.0 = Debug|ARM
 		{71BA3082-AFAC-433B-B51C-17E3C244FEA7}.Debug|x86.ActiveCfg = Debug|x86
 		{71BA3082-AFAC-433B-B51C-17E3C244FEA7}.Debug|x86.Build.0 = Debug|x86
+		{2C2FA788-3E36-4359-B838-48CB26FC5499}.Debug|ARM.ActiveCfg = Debug|ARM
+		{2C2FA788-3E36-4359-B838-48CB26FC5499}.Debug|ARM.Build.0 = Debug|ARM
+		{2C2FA788-3E36-4359-B838-48CB26FC5499}.Debug|x86.ActiveCfg = Debug|x86
+		{2C2FA788-3E36-4359-B838-48CB26FC5499}.Debug|x86.Build.0 = Debug|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

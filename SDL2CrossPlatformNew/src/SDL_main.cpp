@@ -17,6 +17,9 @@
 #include <iostream>
 using namespace std;
 
+#include "MathHelper.h"
+using namespace Math;
+
 #define _USE_MATH_DEFINES
 
 // shader program
@@ -178,7 +181,7 @@ static void display()
 	float topY = 0.3f;
 
 	// compute rotated points
-	float omega = M_PI;
+	float omega = MathHelper::GetPi();
 	static float alpha = 0.0f;
 	alpha += omega * deltaTime;
 	float rotLeftX = cos(alpha)*leftX - sin(alpha)*leftY;
