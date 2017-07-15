@@ -6,12 +6,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\MathHelper.cpp">
+    <ClCompile Include="..\..\..\..\src\MathHelper.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\MathHelper.h">
+    <ClInclude Include="..\..\..\..\src\MathHelper.h">
       <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>

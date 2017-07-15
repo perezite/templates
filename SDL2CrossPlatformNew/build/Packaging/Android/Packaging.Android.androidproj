@@ -24,7 +24,7 @@
     <AntProjectPropertiesFile Include="project.properties" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\projects\Application\Application.vcxproj" />
+    <ProjectReference Include="..\..\Platform\Android\Application\Application.vcxproj" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <RootNamespace>Application</RootNamespace>

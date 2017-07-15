@@ -12,15 +12,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\src\SDL_main.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\src\SDL_android_main.c">
+    <ClCompile Include="..\..\..\..\src\SDL_android_main.c">
       <Filter>Platform\Android</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\SDL_main.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\src\SDL_main.h">
+    <ClInclude Include="..\..\..\..\src\SDL_main.h">
       <Filter>Sources</Filter>
     </ClInclude>
   </ItemGroup>
