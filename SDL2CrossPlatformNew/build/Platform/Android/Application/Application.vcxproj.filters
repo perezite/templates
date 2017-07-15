@@ -1,27 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Sources">
-      <UniqueIdentifier>{ac92243e-64b5-4419-aac7-00bb14250cc0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{bd970717-a6d2-443b-ac77-896e3b6dce05}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Platform\Android">
-      <UniqueIdentifier>{9cbaad96-bbc8-4d51-b582-4a2ccb166e66}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\src\SDL_android_main.c">
-      <Filter>Platform\Android</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\src\SDL_main.cpp">
-      <Filter>Sources</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\src\SDL_main.h">
-      <Filter>Sources</Filter>
-    </ClInclude>
+    <ClCompile Include="..\..\..\..\src\SDL_android_main.c" />
   </ItemGroup>
 </Project>

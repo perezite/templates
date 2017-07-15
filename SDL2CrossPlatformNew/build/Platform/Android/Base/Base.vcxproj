@@ -10,12 +10,6 @@
       <Platform>x86</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\src\MathHelper.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\src\MathHelper.h" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2C2FA788-3E36-4359-B838-48CB26FC5499}</ProjectGuid>
     <Keyword>Android</Keyword>
@@ -40,6 +34,9 @@
     <AndroidAPILevel>android-12</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="Shared">
+    <Import Project="..\..\..\Projects\Base\Base.vcxitems" Label="Shared" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>

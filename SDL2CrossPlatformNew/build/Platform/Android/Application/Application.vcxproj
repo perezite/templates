@@ -15,15 +15,11 @@
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">CompileAsC</CompileAs>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\src\SDL_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base\Base.vcxproj">
       <Project>{2c2fa788-3e36-4359-b838-48cb26fc5499}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\src\SDL_main.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{71ba3082-afac-433b-b51c-17e3c244fea7}</ProjectGuid>
@@ -49,6 +45,9 @@
     <AndroidAPILevel>android-12</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="Shared">
+    <Import Project="..\..\..\Projects\Application\Application.vcxitems" Label="Shared" />
+  </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>

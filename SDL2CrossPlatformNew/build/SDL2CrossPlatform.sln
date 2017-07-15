@@ -15,7 +15,17 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Platform\And
 EndProject
 Project("{39E2626F-3545-4960-A6E8-258AD8476CE5}") = "Packaging.Android", "Packaging\Android\Packaging.Android.androidproj", "{3B468758-79FA-44EF-841B-9239D6F07FAC}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base", "Projects\Base\Base.vcxitems", "{7785D580-C005-4C6B-90D4-9A6636212AF7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Projects\Application\Application.vcxitems", "{45D41ACC-2C3C-43D2-BC10-02AA73FFC7C7}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Projects\Base\Base.vcxitems*{2c2fa788-3e36-4359-b838-48cb26fc5499}*SharedItemsImports = 4
+		Projects\Application\Application.vcxitems*{45d41acc-2c3c-43d2-bc10-02aa73ffc7c7}*SharedItemsImports = 9
+		Projects\Application\Application.vcxitems*{71ba3082-afac-433b-b51c-17e3c244fea7}*SharedItemsImports = 4
+		Projects\Base\Base.vcxitems*{7785d580-c005-4c6b-90d4-9a6636212af7}*SharedItemsImports = 9
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|ARM = Debug|ARM
 		Debug|x86 = Debug|x86
