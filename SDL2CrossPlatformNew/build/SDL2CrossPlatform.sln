@@ -25,7 +25,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base.Windows", "Platform\Wi
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application.Windows", "Platform\Windows\Application\Application.Windows.vcxproj", "{0C624D38-FC5F-49A0-846B-EE5B7B1EBAB9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Packaging.Windows", "Packaging\Windows\Packaging.Windows\Packaging.Windows.vcxproj", "{97C2A5E5-4AF0-4B5E-83DA-48505247E667}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Packaging.Windows", "Packaging\Windows\Packaging.Windows.vcxproj", "{97C2A5E5-4AF0-4B5E-83DA-48505247E667}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -87,7 +87,8 @@ Global
 		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Debug|ARM.Build.0 = Debug|ARM
 		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Debug|x86.ActiveCfg = Debug|Win32
 		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Debug|x86.Build.0 = Debug|Win32
-		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Release|ARM.ActiveCfg = Release|Win32
+		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Release|ARM.ActiveCfg = Release|ARM
+		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Release|ARM.Build.0 = Release|ARM
 		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Release|x86.ActiveCfg = Release|Win32
 		{97C2A5E5-4AF0-4B5E-83DA-48505247E667}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection

@@ -19,12 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Platform\Windows\Application\Application.Windows.vcxproj">
-      <Project>{0c624d38-fc5f-49a0-846b-ee5b7b1ebab9}</Project>
-    </ProjectReference>
+    <ClCompile Include="Dummy.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Dummy.cpp" />
+    <ProjectReference Include="..\..\Platform\Windows\Application\Application.Windows.vcxproj">
+      <Project>{0c624d38-fc5f-49a0-846b-ee5b7b1ebab9}</Project>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{97C2A5E5-4AF0-4B5E-83DA-48505247E667}</ProjectGuid>
