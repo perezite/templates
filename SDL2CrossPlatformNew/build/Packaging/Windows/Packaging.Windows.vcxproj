@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Platform\Windows\Base\Base.vcxproj">
+    <ProjectReference Include="..\..\Platform\Windows\Base\Base.Windows.vcxproj">
       <Project>{91af648c-1a05-4275-9c88-eb82c74d1dd0}</Project>
     </ProjectReference>
   </ItemGroup>

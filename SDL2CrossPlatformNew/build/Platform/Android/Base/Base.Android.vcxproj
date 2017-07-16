@@ -13,7 +13,7 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2C2FA788-3E36-4359-B838-48CB26FC5499}</ProjectGuid>
     <Keyword>Android</Keyword>
-    <ProjectName>Base</ProjectName>
+    <ProjectName>Base.Android</ProjectName>
     <RootNamespace>Base</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
