@@ -23,12 +23,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{EE53
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Base", "Platform\Windows\Base\Base.vcxproj", "{91AF648C-1A05-4275-9C88-EB82C74D1DD0}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Application", "Platform\Windows\Application\Application.vcxproj", "{0C624D38-FC5F-49A0-846B-EE5B7B1EBAB9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Packaging.Windows", "Packaging\Windows\Packaging.Windows.vcxproj", "{0C624D38-FC5F-49A0-846B-EE5B7B1EBAB9}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Projects\Application\Application.vcxitems*{0c624d38-fc5f-49a0-846b-ee5b7b1ebab9}*SharedItemsImports = 4
-		Projects\Base\Base.vcxitems*{0c624d38-fc5f-49a0-846b-ee5b7b1ebab9}*SharedItemsImports = 4
 		Projects\Base\Base.vcxitems*{2c2fa788-3e36-4359-b838-48cb26fc5499}*SharedItemsImports = 4
 		Projects\Application\Application.vcxitems*{45d41acc-2c3c-43d2-bc10-02aa73ffc7c7}*SharedItemsImports = 9
 		Projects\Application\Application.vcxitems*{71ba3082-afac-433b-b51c-17e3c244fea7}*SharedItemsImports = 4
@@ -93,6 +92,6 @@ Global
 		{3B468758-79FA-44EF-841B-9239D6F07FAC} = {7FD156F4-B637-4947-9D69-D38462B92ADA}
 		{EE53054D-8C75-4E62-B9F9-94A06FC7DD95} = {AEA2BFC2-2BB1-4544-89CF-885471D2995B}
 		{91AF648C-1A05-4275-9C88-EB82C74D1DD0} = {EE53054D-8C75-4E62-B9F9-94A06FC7DD95}
-		{0C624D38-FC5F-49A0-846B-EE5B7B1EBAB9} = {EE53054D-8C75-4E62-B9F9-94A06FC7DD95}
+		{0C624D38-FC5F-49A0-846B-EE5B7B1EBAB9} = {7FD156F4-B637-4947-9D69-D38462B92ADA}
 	EndGlobalSection
 EndGlobal

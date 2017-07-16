@@ -91,6 +91,9 @@ static int init() {
 		"}								\n";
 
 	char fShaderStr[] =
+		#ifdef WIN32
+			"#version 130								\n"
+		#endif
 		"precision mediump float;                   \n"
 		"varying vec4 v_vColor;		 				\n"
 		"void main()                                \n"
