@@ -66,7 +66,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>$(SolutionDir)External\Android;$(NDKRoot)\platforms\$(AndroidAPILevel)\arch-x86\usr\include;$(NDKRoot)\sources\android\native_app_glue;$(NDKRoot)\sources\android\ndk_helper;$(NDKRoot)\sources\android\cpufeatures;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)External\Android\include;$(NDKRoot)\platforms\$(AndroidAPILevel)\arch-x86\usr\include;$(NDKRoot)\sources\android\native_app_glue;$(NDKRoot)\sources\android\ndk_helper;$(NDKRoot)\sources\android\cpufeatures;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <LibraryDependencies>SDL2;%(LibraryDependencies);m;log;GLESv2</LibraryDependencies>
@@ -81,7 +81,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <CompileAs>CompileAsCpp</CompileAs>
-      <AdditionalIncludeDirectories>$(SolutionDir)External\Android;$(NDKRoot)\platforms\$(AndroidAPILevel)\arch-x86\usr\include;$(NDKRoot)\sources\android\native_app_glue;$(NDKRoot)\sources\android\ndk_helper;$(NDKRoot)\sources\android\cpufeatures;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)External\Android\include;$(NDKRoot)\platforms\$(AndroidAPILevel)\arch-x86\usr\include;$(NDKRoot)\sources\android\native_app_glue;$(NDKRoot)\sources\android\ndk_helper;$(NDKRoot)\sources\android\cpufeatures;$(StlIncludeDirectories);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <LibraryDependencies>SDL2;%(LibraryDependencies);m;log;GLESv2</LibraryDependencies>
