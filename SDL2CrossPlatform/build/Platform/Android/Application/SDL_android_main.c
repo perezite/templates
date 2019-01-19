@@ -11,6 +11,9 @@
 *******************************************************************************/
 #include <jni.h>
 
+/* The application codes main function*/
+extern int main(int argc, char* args[]);
+
 /* Called before SDL_main() to initialize JNI bindings in SDL library */
 extern void SDL_Android_Init(JNIEnv* env, jclass cls);
 
@@ -61,8 +64,8 @@ JNIEXPORT int JNICALL Java_org_libsdl_app_SDLActivity_nativeInit(JNIEnv* env, jc
 
 
     /* Run the application. */
-
-    status = SDL_main(argc, argv);
+    // status = SDL_main(argc, argv);
+	status = main(argc, argv);
 
     /* Release the arguments. */
 

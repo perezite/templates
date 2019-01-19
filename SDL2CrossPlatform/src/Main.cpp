@@ -12,12 +12,12 @@ using namespace std;
 using namespace Math;
 
 #define _USE_MATH_DEFINES
-#ifdef __ANDROID__
-	#define main SDL_main
-#endif
-#ifdef WIN32
-	#undef main
-#endif
+//#ifdef __ANDROID__
+//	#define main SDL_main
+//#endif
+//#ifdef WIN32
+//	#undef main
+//#endif
 
 static void display()
 {
@@ -89,5 +89,5 @@ int main(int argc, char* args[])
 	loop(&display);
 
 	cleanup();
-	exit(0);
+	return 0;
 }
