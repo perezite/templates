@@ -19,6 +19,10 @@
     <ClCompile Include="SDL_android_main.c">
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">CompileAsC</CompileAs>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">CompileAsC</CompileAs>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'">
+      </PreprocessorDefinitions>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|x86'">
+      </PreprocessorDefinitions>
     </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">

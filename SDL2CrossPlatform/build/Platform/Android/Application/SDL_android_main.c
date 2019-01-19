@@ -1,6 +1,7 @@
 /*
     SDL_android_main.c, placed in the public domain by Sam Lantinga  3/13/14
 */
+
 #include <SDL2/SDL_internal.h>
 
 /* Include the SDL main definition header */
@@ -11,7 +12,8 @@
 *******************************************************************************/
 #include <jni.h>
 
-/* The application codes main function*/
+/* The application code for the main function */
+#undef main
 extern int main(int argc, char* args[]);
 
 /* Called before SDL_main() to initialize JNI bindings in SDL library */
@@ -62,9 +64,7 @@ JNIEXPORT int JNICALL Java_org_libsdl_app_SDLActivity_nativeInit(JNIEnv* env, jc
     }
     argv[argc] = NULL;
 
-
     /* Run the application. */
-    // status = SDL_main(argc, argv);
 	status = main(argc, argv);
 
     /* Release the arguments. */

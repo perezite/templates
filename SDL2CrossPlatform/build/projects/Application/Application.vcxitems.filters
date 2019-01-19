@@ -3,8 +3,10 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Helper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Main.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Demo1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Helper.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Demo1.h" />
   </ItemGroup>
 </Project>
