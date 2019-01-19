@@ -8,7 +8,7 @@
       android:versionName="1.0"
       android:installLocation="auto">
 
-    <!-- Android 2.3.3 -->
+    <!-- Android Version -->
     <uses-sdk android:minSdkVersion="19" android:targetSdkVersion="26" />
 
     <!-- OpenGL ES 2.0 -->
