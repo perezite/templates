@@ -2,7 +2,6 @@
 
 #include <iostream>
 
-
 int32_t shaderProgram = 0;
 SDL_Window* window = 0;
 int height = 0;

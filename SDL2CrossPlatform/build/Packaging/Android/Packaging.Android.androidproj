@@ -14,7 +14,11 @@
     <Content Include="AndroidManifest.xml" />
     <Content Include="build.xml" />
     <Content Include="libs\armeabi-v7a\libSDL2.so" />
+    <Content Include="libs\armeabi-v7a\libSDL2_image.so" />
+    <Content Include="libs\armeabi-v7a\libSDL2_mixer.so" />
     <Content Include="libs\x86\libSDL2.so" />
+    <Content Include="libs\x86\libSDL2_image.so" />
+    <Content Include="libs\x86\libSDL2_mixer.so" />
     <Content Include="res\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -36,12 +40,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <TargetName>Application</TargetName>
-    <AndroidAPILevel>android-15</AndroidAPILevel>
+    <AndroidAPILevel>android-19</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <TargetName>Application</TargetName>
-    <AndroidAPILevel>android-15</AndroidAPILevel>
+    <AndroidAPILevel>android-19</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ImportGroup Label="ExtensionSettings" />

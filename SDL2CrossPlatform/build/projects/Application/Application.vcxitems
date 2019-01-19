@@ -16,10 +16,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Helper.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\SDL_main.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Helper.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\SDL_main.h" />
   </ItemGroup>
 </Project>
