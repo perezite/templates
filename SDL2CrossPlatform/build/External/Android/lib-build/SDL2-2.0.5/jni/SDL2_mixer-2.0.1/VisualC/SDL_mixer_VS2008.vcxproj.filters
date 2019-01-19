@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Public Headers">
+      <UniqueIdentifier>{90d3482b-27fa-466b-8748-21facebb2917}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{01d73369-2ed0-4f63-bfa8-61fc7c3d0c11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x64">
+      <UniqueIdentifier>{e83c9449-25a1-4ccf-85fe-bf7da4f26c5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x86">
+      <UniqueIdentifier>{f7451048-25e0-48d9-bfcc-081b7065bf1a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SDL_mixer.h">
+      <Filter>Public Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dynamic_flac.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dynamic_fluidsynth.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dynamic_mod.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dynamic_modplug.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dynamic_mp3.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\dynamic_ogg.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\effects_internal.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\fluidsynth.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\load_aiff.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\load_flac.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\load_mp3.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\load_ogg.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\load_voc.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\music_cmd.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\music_flac.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\music_mad.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\music_mod.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\music_modplug.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\music_ogg.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\wavestream.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\dynamic_flac.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dynamic_fluidsynth.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dynamic_mod.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dynamic_modplug.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dynamic_mp3.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\dynamic_ogg.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\effect_position.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\effect_stereoreverse.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\effects_internal.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\fluidsynth.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\load_aiff.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\load_flac.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\load_mp3.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\load_ogg.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\load_voc.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mixer.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\music.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\music_cmd.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\music_flac.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\music_mad.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\music_mod.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\music_modplug.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\music_ogg.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\wavestream.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Version.rc">
+      <Filter>Sources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="external\lib\x64\libFLAC-8.dll">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\libmikmod-2.dll">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\libmodplug-1.dll">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\libogg-0.dll">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\libvorbis-0.dll">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\libvorbisfile-3.dll">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\LICENSE.FLAC.txt">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\LICENSE.mikmod.txt">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\LICENSE.modplug.txt">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\LICENSE.ogg-vorbis.txt">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\LICENSE.smpeg.txt">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x64\smpeg2.dll">
+      <Filter>x64</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\libFLAC-8.dll">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\libmodplug-1.dll">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\libogg-0.dll">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\libvorbis-0.dll">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\libvorbisfile-3.dll">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\LICENSE.FLAC.txt">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\LICENSE.modplug.txt">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\LICENSE.ogg-vorbis.txt">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\LICENSE.smpeg.txt">
+      <Filter>x86</Filter>
+    </CustomBuild>
+    <CustomBuild Include="external\lib\x86\smpeg2.dll">
+      <Filter>x86</Filter>
+    </CustomBuild>
+  </ItemGroup>
+</Project>
