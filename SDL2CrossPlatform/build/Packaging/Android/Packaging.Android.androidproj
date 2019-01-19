@@ -19,6 +19,11 @@
     <Content Include="libs\x86\libSDL2.so" />
     <Content Include="libs\x86\libSDL2_image.so" />
     <Content Include="libs\x86\libSDL2_mixer.so" />
+    <Content Include="res\drawable-hdpi\ic_launcher.png" />
+    <Content Include="res\drawable-mdpi\ic_launcher.png" />
+    <Content Include="res\drawable-xhdpi\ic_launcher.png" />
+    <Content Include="res\drawable-xxhdpi\ic_launcher.png" />
+    <Content Include="res\layout\main.xml" />
     <Content Include="res\values\strings.xml" />
   </ItemGroup>
   <ItemGroup>

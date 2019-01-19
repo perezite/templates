@@ -72,8 +72,8 @@ public class SDLActivity extends Activity {
     protected String[] getLibraries() {
         return new String[] {
             "SDL2",
-            // "SDL2_image",
-            // "SDL2_mixer",
+            "SDL2_image",
+            "SDL2_mixer",
             // "SDL2_net",
             // "SDL2_ttf",
             "main"
@@ -178,6 +178,14 @@ public class SDLActivity extends Activity {
 
         setContentView(mLayout);
         
+		// enable immersive mode
+		int iFlags = View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+            View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+            View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+            View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+            View.SYSTEM_UI_FLAG_FULLSCREEN;
+        getWindow().getDecorView().setSystemUiVisibility(iFlags); 
+
         // Get filename from "Open with" of another application
         Intent intent = getIntent();
 
@@ -213,8 +221,16 @@ public class SDLActivity extends Activity {
         }
 
         SDLActivity.handleResume();
-    }
 
+		// enable immersive mode
+		int iFlags = 
+        View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
+        View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
+        View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION |
+        View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+        View.SYSTEM_UI_FLAG_FULLSCREEN;
+		getWindow().getDecorView().setSystemUiVisibility(iFlags);    
+    }
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
