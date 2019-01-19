@@ -16,11 +16,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Demo1.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Demo2.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Helper.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Demo1.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Demo2.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Helper.h" />
   </ItemGroup>
 </Project>

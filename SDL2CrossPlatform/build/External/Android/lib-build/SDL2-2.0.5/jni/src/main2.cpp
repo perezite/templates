@@ -1,6 +1,3 @@
-/*This source code copyrighted by Lazy Foo' Productions (2004-2019)
-and may not be redistributed without written permission.*/
-
 //Using SDL, standard IO, and, strings
 #include <SDL.h>
 #include <stdio.h>

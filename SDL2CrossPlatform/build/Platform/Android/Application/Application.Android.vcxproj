@@ -74,7 +74,7 @@
       <PreprocessorDefinitions>SDL_MAIN_HANDLED</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <LibraryDependencies>SDL2;%(LibraryDependencies);m;log;GLESv2</LibraryDependencies>
+      <LibraryDependencies>SDL2;SDL2_image;SDL2_mixer;%(LibraryDependencies);m;log;GLESv2</LibraryDependencies>
       <AdditionalDependencies>
       </AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Packaging\Android\libs\$(TargetArchAbi);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -90,7 +90,7 @@
       <PreprocessorDefinitions>SDL_MAIN_HANDLED</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <LibraryDependencies>SDL2;%(LibraryDependencies);m;log;GLESv2</LibraryDependencies>
+      <LibraryDependencies>SDL2;SDL2_image;SDL2_mixer;%(LibraryDependencies);m;log;GLESv2</LibraryDependencies>
       <AdditionalDependencies>
       </AdditionalDependencies>
       <AdditionalLibraryDirectories>$(SolutionDir)Packaging\Android\libs\$(TargetArchAbi);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
