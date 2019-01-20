@@ -8,10 +8,12 @@ using namespace std;
 #define _USE_MATH_DEFINES
 
 #include "Demo1.h"
+#include "Demo2.h"
 
 int main(int argc, char* args[])
 {
-	Demo1::run();
+	// Demo1::run();
+	Demo2::run();
 
 	return 0;
 }

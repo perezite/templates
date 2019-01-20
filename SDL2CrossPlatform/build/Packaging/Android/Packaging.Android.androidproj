@@ -45,12 +45,12 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x86'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <TargetName>Application</TargetName>
-    <AndroidAPILevel>android-19</AndroidAPILevel>
+    <AndroidAPILevel>android-26</AndroidAPILevel>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
     <TargetName>Application</TargetName>
-    <AndroidAPILevel>android-19</AndroidAPILevel>
+    <AndroidAPILevel>android-26</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(AndroidTargetsPath)\Android.props" />
   <ImportGroup Label="ExtensionSettings" />
