@@ -43,12 +43,12 @@ namespace
 		float omega = MathHelper::GetPi();
 		static float alpha = 0.0f;
 		alpha += omega * deltaTime;
-		float rotLeftX = cos(alpha)*leftX - sin(alpha)*leftY;
-		float rotLeftY = sin(alpha)*leftX + cos(alpha)*leftY;
-		float rotRightX = cos(alpha)*rightX - sin(alpha)*rightY;
-		float rotRightY = sin(alpha)*rightX + cos(alpha)*rightY;
-		float rotTopX = cos(alpha)*topX - sin(alpha)*topY;
-		float rotTopY = sin(alpha)*topX + cos(alpha)*topY;
+		float rotLeftX = cosf(alpha)*leftX - sinf(alpha)*leftY;
+		float rotLeftY = sinf(alpha)*leftX + cosf(alpha)*leftY;
+		float rotRightX = cosf(alpha)*rightX - sinf(alpha)*rightY;
+		float rotRightY = sinf(alpha)*rightX + cosf(alpha)*rightY;
+		float rotTopX = cosf(alpha)*topX - sinf(alpha)*topY;
+		float rotTopY = sinf(alpha)*topX + cosf(alpha)*topY;
 
 		// render
 		const float color[] = { 1.0f, 0.0f, 0.0f, 1.0f };

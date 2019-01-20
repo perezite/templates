@@ -1,15 +1,16 @@
 #include "Demo2.h"
-
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
 #include <SDL2/SDL_mixer.h>
 #include <stdio.h>
 #include <string>
 #include <string.h>
+#ifdef WIN32
+	#include <Windows.h>
+#endif
 
 namespace
 {
-
 	//Texture wrapper class
 	class LTexture
 	{
@@ -22,11 +23,6 @@ namespace
 
 		//Loads image at specified path
 		bool loadFromFile(std::string path);
-
-#ifdef _SDL_TTF_H
-		//Creates image from font string
-		bool loadFromRenderedText(std::string textureText, SDL_Color textColor);
-#endif
 
 		//Creates blank texture
 		bool createBlank(int width, int height, SDL_TextureAccess = SDL_TEXTUREACCESS_STREAMING);
@@ -157,7 +153,7 @@ namespace
 
 					//Copy loaded/formatted surface pixels
 					memcpy(mPixels, formattedSurface->pixels, formattedSurface->pitch * formattedSurface->h);
-
+					
 					//Get image dimensions
 					mWidth = formattedSurface->w;
 					mHeight = formattedSurface->h;
@@ -196,43 +192,6 @@ namespace
 		mTexture = newTexture;
 		return mTexture != NULL;
 	}
-
-#ifdef _SDL_TTF_H
-	bool LTexture::loadFromRenderedText(std::string textureText, SDL_Color textColor)
-	{
-		//Get rid of preexisting texture
-		free();
-
-		//Render text surface
-		SDL_Surface* textSurface = TTF_RenderText_Solid(gFont, textureText.c_str(), textColor);
-		if (textSurface != NULL)
-		{
-			//Create texture from surface pixels
-			mTexture = SDL_CreateTextureFromSurface(gRenderer, textSurface);
-			if (mTexture == NULL)
-			{
-				SDL_Log("Unable to create texture from rendered text! SDL Error: %s\n", SDL_GetError());
-			}
-			else
-			{
-				//Get image dimensions
-				mWidth = textSurface->w;
-				mHeight = textSurface->h;
-			}
-
-			//Get rid of old surface
-			SDL_FreeSurface(textSurface);
-		}
-		else
-		{
-			SDL_Log("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());
-		}
-
-
-		//Return success
-		return mTexture != NULL;
-	}
-#endif
 
 	bool LTexture::createBlank(int width, int height, SDL_TextureAccess access)
 	{
@@ -388,6 +347,25 @@ namespace
 		return pixels[(y * (mPitch / 4)) + x];
 	}
 
+	std::string getFilePathFromAssetPath(std::string assetPath)
+	{
+		#ifdef __ANDROID__
+			return assetPath;
+		#elif defined(WIN32)
+			wchar_t filePath[MAX_PATH];
+			HMODULE hModule = GetModuleHandle(NULL);
+			GetModuleFileName(hModule, filePath, (sizeof(filePath)));
+			std::wstring filePathAsWideString(filePath);
+			std::string filePathAsString(filePathAsWideString.begin(), filePathAsWideString.end());
+			size_t lastPathSeparatorPosition = filePathAsString.rfind("\\");
+			std::string executableFolderPath = filePathAsString.substr(0, lastPathSeparatorPosition);
+			std::string assetFolderPath = executableFolderPath + "\\..\\Assets";
+			return assetFolderPath + "\\" + assetPath;
+		#else
+			#error OS not supported
+		#endif	
+	}
+
 	bool init()
 	{
 		//Initialization flag
@@ -411,8 +389,13 @@ namespace
 			SDL_DisplayMode displayMode;
 			if (SDL_GetCurrentDisplayMode(0, &displayMode) == 0)
 			{
+				#ifdef WIN32
+					gScreenRect.w = 400;
+					gScreenRect.h = 400;
+				#else			
 				gScreenRect.w = displayMode.w;
 				gScreenRect.h = displayMode.h;
+				#endif
 			}
 
 			//Create window
@@ -454,7 +437,7 @@ namespace
 						else
 						{
 							//Load music
-							gMusic = Mix_LoadMUS("orchestral.ogg");
+							gMusic = Mix_LoadMUS(getFilePathFromAssetPath("orchestral.ogg").c_str());
 							if (gMusic == NULL)
 							{
 								SDL_Log("Failed to load music! SDL_mixer Error: %s\n", Mix_GetError());
@@ -463,7 +446,7 @@ namespace
 							else
 							{
 								//Load sound
-								gSound = Mix_LoadWAV("ding.wav");
+								gSound = Mix_LoadWAV(getFilePathFromAssetPath("ding.wav").c_str());
 								if (gSound == NULL)
 								{
 									SDL_Log("Failed to load sound! SDL_mixer Error: %s\n", Mix_GetError());
@@ -485,12 +468,12 @@ namespace
 		bool success = true;
 
 		//Load splash textures
-		if (!gPortraitTexture.loadFromFile("portrait.png"))
+		if (!gPortraitTexture.loadFromFile(getFilePathFromAssetPath("portrait.png").c_str()))
 		{
 			SDL_Log("Failed to load portrait texture!\n");
 			success = false;
 		}
-		if (!gLandscapeTexture.loadFromFile("landscape.png"))
+		if (!gLandscapeTexture.loadFromFile(getFilePathFromAssetPath("landscape.png").c_str()))
 		{
 			SDL_Log("Failed to load landscape texture!\n");
 			success = false;
@@ -549,7 +532,6 @@ void Demo2::run()
 			//Event handler
 			SDL_Event e;
 
-
 			//While application is running
 			while (!quit)
 			{
@@ -557,7 +539,7 @@ void Demo2::run()
 				while (SDL_PollEvent(&e) != 0)
 				{
 					//touch event
-					if (e.type == SDL_FINGERDOWN) 
+					if (e.type == SDL_FINGERDOWN || e.type == SDL_KEYDOWN) 
 					{
 						Mix_PlayChannel(-1, gSound, 0);
 					}
@@ -621,6 +603,6 @@ void Demo2::run()
 	}
 
 	//Free resources and close SDL
-	close();
+	::close();
 
 }
