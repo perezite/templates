@@ -91,11 +91,15 @@ namespace
 	SDL_Rect gScreenRect = { 0, 0, 320, 240 };
 
 	//Scene textures
-	LTexture gPortraitTexture;
+	LTexture gPortraitTexture;	
 	LTexture gLandscapeTexture;
 
 	//The music
 	Mix_Music *gMusic = NULL;
+
+	// a sound effect
+	Mix_Chunk *gSound = NULL;
+
 
 	LTexture::LTexture()
 	{
@@ -453,8 +457,18 @@ namespace
 							gMusic = Mix_LoadMUS("orchestral.ogg");
 							if (gMusic == NULL)
 							{
-								SDL_Log("Failed to load beat music! SDL_mixer Error: %s\n", Mix_GetError());
+								SDL_Log("Failed to load music! SDL_mixer Error: %s\n", Mix_GetError());
 								success = false;
+							}
+							else
+							{
+								//Load sound
+								gSound = Mix_LoadWAV("ding.wav");
+								if (gSound == NULL)
+								{
+									SDL_Log("Failed to load sound! SDL_mixer Error: %s\n", Mix_GetError());
+									success = false;
+								}
 							}
 						}
 					}
@@ -487,6 +501,10 @@ namespace
 
 	void close()
 	{
+		// Free the sound 
+		Mix_FreeChunk(gSound);
+		gSound = NULL;
+
 		//Free the music
 		Mix_FreeMusic(gMusic);
 		gMusic = NULL;
@@ -531,12 +549,19 @@ void Demo2::run()
 			//Event handler
 			SDL_Event e;
 
+
 			//While application is running
 			while (!quit)
 			{
 				//Handle events on queue
 				while (SDL_PollEvent(&e) != 0)
 				{
+					//touch event
+					if (e.type == SDL_FINGERDOWN) 
+					{
+						Mix_PlayChannel(-1, gSound, 0);
+					}
+
 					//User requests quit
 					if (e.type == SDL_QUIT)
 					{
