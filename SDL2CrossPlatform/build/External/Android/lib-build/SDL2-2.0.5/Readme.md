@@ -1,6 +1,6 @@
 # Readme
 This is the android library build for SDL2-2.0.5 with SDL2_mixer-2.0.1 and SDL2_image-2.0.1
-Note that serveral soundfile formats in SDL_mixer-2.0.1/Android.mk have been disabled because I could not get them to compile. Among them are MP3 and FLAC.
+Note that serveral soundfile formats in SDL_mixer-2.0.1/Android.mk have been disabled because I could not get them to compile. Among the deactivated ones are MP3 and FLAC.
 Also, the webp format in SDL_image-2.0.1/Android.mk has been disabled for the same reason.
 
 # Compile
