@@ -1,0 +1,8 @@
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\bin\Android\Application.apk.recipe
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\bin\Android\Application.apk.recipe.merged
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\bin\Android\Application.apk
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\bin\Android\Application.lastsuccessfuldeploy
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\Packaging\Android\ARM\Debug\FileStringReplace.incremental
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\bin\Android\Package\libs\armeabi-v7a\libmain.so
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\bin\Android\Package\libs\armeabi-v7a\libbase.a
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\bin\Android\Package\project.properties

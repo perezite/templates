@@ -1,0 +1,26 @@
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes.dex : \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\BuildConfig.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\DummyEdit.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\R$attr.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\R$drawable.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\R$layout.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\R$string.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\R.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$1.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$2.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$3.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$4.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$5.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$6.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$SDLCommandHandler.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity$ShowTextInputTask.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLActivity.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLGenericMotionListener_API12.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLInputConnection.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLJoystickHandler.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$RangeComparator.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLJoystickHandler_API12$SDLJoystick.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLJoystickHandler_API12.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLMain.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLSurface$1.class \
+D:\Indie\Development\Simulo\templates\SDL2CrossPlatform\build\External\Android\lib-build\SDL2-2.0.5\bin\classes\org\libsdl\app\SDLSurface.class \
