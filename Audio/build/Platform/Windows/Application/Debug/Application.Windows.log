@@ -1,12 +1,3 @@
-﻿  Precompiled.cpp
-  AndroidAudio.cpp
-  AndroidSound.cpp
-  Java.cpp
-  Input.cpp
-  Main.cpp
-  Music.cpp
-  Sound.cpp
-  Stopwatch.cpp
-  Window.cpp
+﻿  Main.cpp
 Java.obj : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
-  Application.Windows.vcxproj -> D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\build\Platform\Windows\Application\Debug\Application.Windows.lib
+  Application.Windows.vcxproj -> D:\Indie\Development\Simulo\templates\Audio\build\Platform\Windows\Application\Debug\Application.Windows.lib

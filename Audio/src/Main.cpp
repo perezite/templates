@@ -4,13 +4,8 @@
 #include "Music.h"
 #include "Stopwatch.h"
 #include "Logger.h"
-#ifdef __ANDROID__
-	#include "Java.h"
-#endif
 #include <SDL2/SDL.h>
-#ifdef __ANDROID__
-	#include <SDL2/SDL_mixer.h>
-#endif
+#include <SDL2/SDL_mixer.h>
 #include <iostream>
 
 enum class PlaybackState {
@@ -185,16 +180,6 @@ void updatePlayback()
 	}
 }
 
-void update()
-{
-	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
-		SDL_Log("tap");
-		playback();
-	}
-
-	updatePlayback();
-}
-
 void init()
 {
 	sound1.load("ding.ogg");
@@ -205,14 +190,14 @@ void init()
 	music3.setLooping(true);
 }
 
-void update2()
+void update()
 {
-	if (sb::Input::isTouchGoingDown()) {
+	if (sb::Input::isMouseGoingDown() || sb::Input::isTouchGoingDown()) {
 		SDL_Log("tap");
-		music1.play();
-		sound1.play();
-		tapCounter++;
+		playback();
 	}
+
+	updatePlayback();
 }
 
 void run() 
@@ -221,13 +206,57 @@ void run()
 	init();
 
 	while (window.isOpen()) {
-		/*if (tapCounter == 2)
-			window.close();*/
-
-
 		window.update();
 		update();
-		// update2();
+		window.draw();
+	}
+}
+
+#ifdef WIN32
+std::string getExecutablePath() {
+	wchar_t buffer[MAX_PATH];
+	GetModuleFileName(NULL, buffer, MAX_PATH);
+	std::wstring wStringBuffer = std::wstring(buffer);
+	std::string stringBuffer(wStringBuffer.begin(), wStringBuffer.end());
+	std::size_t pos = stringBuffer.find_last_of("\\/");
+	return stringBuffer.substr(0, pos);	
+}
+#endif
+
+std::string getFilePathFromAssetPath(std::string assetPath)
+{
+	#ifdef WIN32
+		std::string assetFolderPath = getExecutablePath() + "/../Assets";
+		return assetFolderPath + "/" + assetPath;
+	#else
+		return assetPath;
+	#endif
+}
+
+Mix_Chunk* sound;
+
+void initWindowsTest()
+{
+	int result = Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
+	sound = Mix_LoadWAV(getFilePathFromAssetPath("ding.ogg").c_str());
+}
+
+void updateWindowsTest()
+{
+	if (sb::Input::isMouseGoingDown()) 
+	{
+		int result = Mix_PlayChannel(-1, sound, 0);
+	}
+}
+
+void runWindowsTest()
+{
+	sb::Window window;
+	initWindowsTest();
+
+	while (window.isOpen()) {
+		window.update();
+		updateWindowsTest();
 		window.draw();
 	}
 }
@@ -236,7 +265,7 @@ int main(int argc, char* args[])
 {
 	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
 	
-	run();
+	runWindowsTest();
 
 	SDL_Log("Shutting down...");
 
