@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{0527DFEE-E806-4CDC-B2EA-6809BA2E081E}</ItemsProjectGuid>
+    <ItemsProjectName>orbis</ItemsProjectName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\components\Component.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\components\Shape.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\core\Error.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\core\Log.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\math\Vector2.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Color.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Drawable.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Mesh.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\OpenGL.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Renderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Shader.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Transform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Transformable.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Vertex.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\math\Vector2.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\components\Shape.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\core\Error.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Color.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Mesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Renderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Shader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Transform.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\orbis\video\Window.cpp" />
+  </ItemGroup>
+</Project>

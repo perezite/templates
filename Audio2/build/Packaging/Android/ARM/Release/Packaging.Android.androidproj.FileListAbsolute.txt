@@ -1,0 +1,6 @@
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Application.apk.recipe
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Application.apk.recipe.merged
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Application.apk
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Application.lastsuccessfuldeploy
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\build\Packaging\Android\ARM\Release\FileStringReplace.incremental
+D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\bin\Android\Package\libs\armeabi-v7a\libmain.so

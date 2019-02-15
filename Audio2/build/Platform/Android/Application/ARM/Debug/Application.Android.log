@@ -1,0 +1,6 @@
+﻿  ANDROID_HOME=C:\Program Files (x86)\Android\android-sdk
+  ANT_HOME=C:\Program Files (x86)\Microsoft Visual Studio 14.0 Community\Apps\apache-ant-1.9.3\
+  JAVA_HOME=C:\Program Files (x86)\Java\jdk1.8.0_201
+  NDK_ROOT=C:\ProgramData\Microsoft\AndroidNDK64\android-ndk-r11c
+  Main.cpp
+  Application.Android.vcxproj -> D:\Indie\Development\Simulo\cheesy\AndroidJniAudio\build\Platform\Android\Application\ARM\Debug\libmain.so
