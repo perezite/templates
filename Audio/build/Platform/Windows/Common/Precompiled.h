@@ -2,9 +2,11 @@
 
 #ifndef __INTELLISENSE__
 
-	#ifdef _DEBUG
-		#define _ITERATOR_DEBUG_LEVEL 0	// prevent slow stl debugging
-	#endif
+	// prevent slow stl debugging
+	// Note: This can cause problems with libraries in debug mode (for example SFML debug is messed up), so it's probably best, not to use it ...
+	// #ifdef _DEBUG
+	//	 #define _ITERATOR_DEBUG_LEVEL 0	
+	// #endif
 
 	#define _USE_MATH_DEFINES
 

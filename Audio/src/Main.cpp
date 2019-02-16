@@ -6,6 +6,9 @@
 #include "Logger.h"
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_mixer.h>
+#ifdef WIN32
+	#include <SFML/Audio.hpp>
+#endif
 #include <iostream>
 
 enum class PlaybackState {
@@ -234,11 +237,18 @@ std::string getFilePathFromAssetPath(std::string assetPath)
 }
 
 Mix_Chunk* sound;
+#ifdef WIN32	
+	sf::Music music;
+#endif
 
 void initWindowsTest()
 {
 	int result = Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
 	sound = Mix_LoadWAV(getFilePathFromAssetPath("ding.ogg").c_str());
+	#ifdef WIN32
+		music.openFromFile("orchestral.ogg");
+		music.play();
+	#endif
 }
 
 void updateWindowsTest()

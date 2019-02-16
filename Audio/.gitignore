@@ -1,6 +1,18 @@
+/*.obj
+
+/*.tlog
+
+/*.obj
+
+/*.idb
+
+/*.pdb
+
+/*.pch
+
 /.vs
 
-*.db
+/*.db
 
 /*.exe
 /ARM
