@@ -215,48 +215,20 @@ void run()
 	}
 }
 
-#ifdef WIN32
-std::string getExecutablePath() {
-	wchar_t buffer[MAX_PATH];
-	GetModuleFileName(NULL, buffer, MAX_PATH);
-	std::wstring wStringBuffer = std::wstring(buffer);
-	std::string stringBuffer(wStringBuffer.begin(), wStringBuffer.end());
-	std::size_t pos = stringBuffer.find_last_of("\\/");
-	return stringBuffer.substr(0, pos);	
-}
-#endif
-
-std::string getFilePathFromAssetPath(std::string assetPath)
-{
-	#ifdef WIN32
-		std::string assetFolderPath = getExecutablePath() + "/../Assets";
-		return assetFolderPath + "/" + assetPath;
-	#else
-		return assetPath;
-	#endif
-}
-
-Mix_Chunk* sound;
-#ifdef WIN32	
-	sf::Music music;
-#endif
+sb::Sound sound;
+sb::Music music;
 
 void initWindowsTest()
 {
-	int result = Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 1024);
-	sound = Mix_LoadWAV(getFilePathFromAssetPath("ding.ogg").c_str());
-	#ifdef WIN32
-		music.openFromFile("orchestral.ogg");
-		music.play();
-	#endif
+	sound.load("ding.ogg");
+	music.load("orchestral.ogg");
+	music.play();
 }
 
 void updateWindowsTest()
 {
 	if (sb::Input::isMouseGoingDown()) 
-	{
-		int result = Mix_PlayChannel(-1, sound, 0);
-	}
+		sound.play();
 }
 
 void runWindowsTest()

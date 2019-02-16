@@ -1,14 +1,15 @@
 #pragma once 
-#ifdef __ANDROID__
-	#include "Java.h"
-#endif 
 #include <string>
 
 namespace sb 
 {
+	class MusicImpl;
+
 	class Music
 	{
 	public:
+		Music();
+
 		~Music();
 
 		void load(std::string assetPath);
@@ -25,11 +26,7 @@ namespace sb
 		void validateFileEnding(std::string assetPath);
 
 	private: 
-		#ifdef __ANDROID__
-			jint m_id;
-		#endif
-
-		std::string m_assetPath;
+		MusicImpl* m_musicImpl;
 	};
 }
 

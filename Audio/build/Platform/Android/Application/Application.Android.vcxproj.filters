@@ -3,9 +3,32 @@
   <ItemGroup>
     <ClCompile Include="SDL_android_main.c" />
     <ClCompile Include="Precompiled.cpp" />
+    <ClCompile Include="..\..\..\..\src\Android\Java.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Android\MusicImpl.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\Android\AndroidAudio.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Precompiled.h" />
     <ClInclude Include="SDL_android_main.h" />
+    <ClInclude Include="..\..\..\..\src\Android\AndroidAudio.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\Android\Java.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\src\Android\MusicImpl.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{ca59bdca-6c09-483b-8ad6-f738fb3e8c38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

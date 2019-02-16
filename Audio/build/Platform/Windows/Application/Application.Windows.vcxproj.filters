@@ -2,8 +2,19 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="Precompiled.cpp" />
+    <ClCompile Include="..\..\..\..\src\Windows\MusicImpl.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Precompiled.h" />
+    <ClInclude Include="..\..\..\..\src\Windows\MusicImpl.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{1b3cd5d5-53e0-46df-ab1b-b519934a72d0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

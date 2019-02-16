@@ -15,9 +15,6 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidAudio.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidSound.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Java.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Input.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Main.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Music.cpp" />
@@ -26,9 +23,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)..\..\..\src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidAudio.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\AndroidSound.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Java.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Logger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\GL.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\..\..\src\Input.h" />

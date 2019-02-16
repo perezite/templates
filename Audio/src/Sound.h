@@ -1,7 +1,5 @@
 #pragma once 
-#ifdef __ANDROID__
-	#include <SDL2/SDL_mixer.h>
-#endif
+#include <SDL2/SDL_mixer.h>
 #include <string>
 
 namespace sb 
@@ -22,9 +20,7 @@ namespace sb
 		void validateFileEnding(std::string assetPath);
 
 	private:
-		#ifdef __ANDROID__
-			Mix_Chunk* m_sound;
-		#endif
+		Mix_Chunk* m_sound;
 
 		std::string m_assetPath;
 

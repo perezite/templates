@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Packaging", "Packaging", "{
 EndProject
 Project("{39E2626F-3545-4960-A6E8-258AD8476CE5}") = "Packaging.Android", "Packaging\Android\Packaging.Android.androidproj", "{3B468758-79FA-44EF-841B-9239D6F07FAC}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "application", "projects\Application\Application.vcxitems", "{45D41ACC-2C3C-43D2-BC10-02AA73FFC7C7}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "application", "Projects\Application\Application.vcxitems", "{45D41ACC-2C3C-43D2-BC10-02AA73FFC7C7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows", "Windows", "{EE53054D-8C75-4E62-B9F9-94A06FC7DD95}"
 EndProject
