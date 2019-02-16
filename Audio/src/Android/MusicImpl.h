@@ -21,9 +21,6 @@ namespace sb
 
 		void setVolume(float volume);
 
-	protected:
-		void validateFileEnding(std::string assetPath);
-
 	private: 
 		#ifdef __ANDROID__
 			jint m_id;

@@ -1,9 +1,9 @@
 #include "MusicImpl.h"
 
-// make sure that nobody activated ITERATOR_DEBUG_LEVEL = 0 in debug mode. This isn't gonna fly with SFML-Audio
+// Setting ITERATOR_DEBUG_LEVEL = 0 in debug mode isn't gonny fly with SFML-Audio, so issue a warning if this were the case
 #if defined(_ITERATOR_DEBUG_LEVEL) && defined(_DEBUG)
 	#if (_ITERATOR_DEBUG_LEVEL == 0)
-		#error _ITERATOR_DEBUG_LEVEL = 0 cannot be set in debug mode because the SFML-Audio library is not compatible with that
+		warning setting _ITERATOR_DEBUG_LEVEL = 0 in debug mode will probably cause problems with music playback
 	#endif
 #endif
 

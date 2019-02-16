@@ -21,7 +21,6 @@ namespace sb
 			if (!AndroidAudio::isValid()) return;
 
 			m_assetPath = assetPath;
-			validateFileEnding(assetPath);
 
 			m_id = sb::Java::callStaticIntMethod("org/libsdl/app/Music", "loadAsync", "(Ljava/lang/String;)I", sb::Java::newUtfString(assetPath));
 			SB_WARNING_IF2(m_id == jint(-1), true) << "unable to load music track " << assetPath << std::endl;

@@ -25,8 +25,6 @@ enum class PlaybackState {
 	TheEnd
 };
 
-static int tapCounter = 0;
-
 PlaybackState playbackState = PlaybackState::TheBeginning;
 sb::Sound sound1;
 sb::Sound sound2;
@@ -218,27 +216,27 @@ void run()
 sb::Sound sound;
 sb::Music music;
 
-void initWindowsTest()
+void initTest2()
 {
 	sound.load("ding.ogg");
 	music.load("orchestral.ogg");
 	music.play();
 }
 
-void updateWindowsTest()
+void updateTest2()
 {
 	if (sb::Input::isMouseGoingDown()) 
 		sound.play();
 }
 
-void runWindowsTest()
+void runTest2()
 {
 	sb::Window window;
-	initWindowsTest();
+	initTest2();
 
 	while (window.isOpen()) {
 		window.update();
-		updateWindowsTest();
+		updateTest2();
 		window.draw();
 	}
 }
@@ -247,7 +245,7 @@ int main(int argc, char* args[])
 {
 	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
 	
-	runWindowsTest();
+	runTest2();
 
 	SDL_Log("Shutting down...");
 

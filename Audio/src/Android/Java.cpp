@@ -1,7 +1,7 @@
 #ifdef __ANDROID__
 #include "Java.h"
-#include "../build/Platform/Android/Application/SDL_android_main.h"
-#include "Logger.h"
+#include "../../build/Platform/Android/Application/SDL_android_main.h"
+#include "../Logger.h"
 #include <stdarg.h>
 
 namespace sb

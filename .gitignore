@@ -453,3 +453,17 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 *.obj
+/Audio/build/Platform/Android/Application/ARM/Debug/*.o
+/Audio/build/Platform/Android/Application/ARM/Debug/Applicat.71ba3082.tlog/*.tlog
+/Audio/build/Platform/Android/Application/ARM/Debug/*.log
+/Audio/build/Platform/Android/Application/ARM/Debug/*.so
+/Audio/build/Platform/Android/Application/ARM/Debug/*.gch
+/Audio/build/Platform/Android/Application/x86/Debug/*.log
+/Audio/build/Platform/Android/Application/x86/Debug/*.o
+/Audio/build/Platform/Windows/Application/Release/Applicat.0C624D38.tlog/*.lastbuildstate
+/Audio/build/Platform/Windows/Application/Release/Applicat.0C624D38.tlog/*.tlog
+/Audio/build/Platform/Windows/Application/Release/*.lib
+/Audio/build/Platform/Windows/Application/Release/*.log
+/Audio/build/Platform/Windows/Application/Release/*.pdb
+/Audio/build/Platform/Windows/Application/Release/*.obj
+/Audio/build/Platform/Windows/Application/Release/*.pch
