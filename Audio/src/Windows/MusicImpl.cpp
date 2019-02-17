@@ -15,11 +15,14 @@ namespace sb
 
 	void MusicImpl::load(std::string assetPath)
 	{
-		m_music.openFromFile("orchestral.ogg");
+		m_music.openFromFile(assetPath);
 	}
 
 	void MusicImpl::play()
 	{
+		if (m_music.getStatus() == sf::Music::Playing)
+			return;
+
 		m_music.play();
 	}
 
@@ -35,6 +38,6 @@ namespace sb
 
 	void MusicImpl::setVolume(float volume)
 	{
-		m_music.setVolume(volume);
+		m_music.setVolume(volume * 100.0f);
 	}
 }

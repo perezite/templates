@@ -4,11 +4,6 @@
 #include "Music.h"
 #include "Stopwatch.h"
 #include "Logger.h"
-#include <SDL2/SDL.h>
-#include <SDL2/SDL_mixer.h>
-#ifdef WIN32
-	#include <SFML/Audio.hpp>
-#endif
 #include <iostream>
 
 enum class PlaybackState {
@@ -26,121 +21,217 @@ enum class PlaybackState {
 };
 
 PlaybackState playbackState = PlaybackState::TheBeginning;
+PlaybackState nextPlaybackState = PlaybackState::TheBeginning;
+bool isMusicFading = false;
 sb::Sound sound1;
 sb::Sound sound2;
 sb::Music music1;
 sb::Music music2;
 sb::Music music3;
 
-void playback() {
-	if (playbackState == PlaybackState::TheBeginning) {
-		playbackState = PlaybackState::TowSoundsTwoFadingMusics;
+void TheBeginning(PlaybackState next)
+{
+	SDL_Log("TheBeginning update");
+	static int counter = 0;
+	counter++;
+	if (counter == 1) {
+		SDL_Log("TheBeginning finished");
+		nextPlaybackState = next;
 	}
-	if (playbackState == PlaybackState::TowSoundsTwoFadingMusics) {
-		SDL_Log("TowSoundsTwoFadingMusics");
-		static int counter6 = 0;
+}
+
+void TwoSoundsTwoFadingMusics(PlaybackState next)
+{
+	SDL_Log("TowSoundsTwoFadingMusics update");
+	static int counter = 0;
+	if (counter == 0) {
+		music1.setLooping(true);
+		music2.setLooping(true);
 		music1.setVolume(0);
 		music2.setVolume(1);
-		music1.play();
-		music2.play();
-		sound1.play();
-		SDL_Log("0.5 second delay...");
-		SDL_Delay(500);
-		SDL_Log("Done");
-		sound2.play();
-		counter6++;
-		if (counter6 == 3)
-			playbackState = PlaybackState::TwoFadingMusics;
+		isMusicFading = true;
 	}
-	if (playbackState == PlaybackState::TwoFadingMusics) {
-		SDL_Log("TwoFadingMusics");
-		static int counter5 = 0;
-		music1.stop();
-		music2.stop();
-		music1.setVolume(0);
-		music2.setVolume(1);
-		music1.play();
-		music2.play();
-		counter5++;
-		if (counter5 == 2)
-			playbackState = PlaybackState::LoopingMusic;
-	}
-	else if (playbackState == PlaybackState::LoopingMusic) {
-		SDL_Log("LoopingMusic");
-		music1.stop();
-		music2.stop();
+
+	music1.play();
+	music2.play();
+	sound1.play();
+	SDL_Log("0.5 second delay...");
+	SDL_Delay(500);
+	SDL_Log("Done");
+	sound2.play();
+	counter++;
+	if (counter == 3) {
+		SDL_Log("TowSoundsTwoFadingMusics finished");
 		music1.setVolume(1);
 		music2.setVolume(1);
-		music3.play();
-		playbackState = PlaybackState::TwoMusicsTwoSounds;
+		music1.stop();
+		music2.stop();
+		isMusicFading = false;
+		nextPlaybackState = next;
 	}
+}
+
+void TwoFadingMusics(PlaybackState next)
+{
+	SDL_Log("TwoFadingMusics update");
+	static int counter = 0;
+	if (counter == 0) {
+		music1.setVolume(0);
+		music2.setVolume(1);
+		music1.play();
+		music2.play();
+		isMusicFading = true;
+	}
+	counter++;
+	if (counter == 2) {
+		SDL_Log("TwoFadingMusics finished");
+		music1.setVolume(1);
+		music2.setVolume(1);
+		music1.stop();
+		music2.stop();
+		isMusicFading = false;
+		nextPlaybackState = next;
+	}
+}
+
+void LoopingMusic(PlaybackState next)
+{
+	SDL_Log("LoopingMusic update");
+	static int counter = 0;
+	music3.play();
+
+	counter++;
+	if (counter == 2) {
+		SDL_Log("LoopingMusic finished");
+		music3.stop();
+		nextPlaybackState = next;
+	}
+}
+
+void TwoMusicsTwoSounds(PlaybackState next)
+{
+	SDL_Log("TwoMusicsTwoSounds update");
+	static unsigned int counter = 0;
+	music1.play();
+	music2.play();
+	sound2.play();
+	SDL_Log("0.5 second delay...");
+	SDL_Delay(500);
+	SDL_Log("Done");
+	sound1.play();
+	counter++;
+	if (counter == 3) {
+		SDL_Log("TwoMusicsTwoSounds finished");
+		music1.stop();
+		music2.stop();
+		nextPlaybackState = next;
+	}
+}
+
+void TwoMusics(PlaybackState next)
+{
+	SDL_Log("TwoMusics update");
+	static unsigned int counter = 0;
+	music2.play();
+	music1.play();
+	counter++;
+	if (counter == 2) {
+		SDL_Log("TwoMusics finished");
+		music1.stop();
+		music2.stop();
+		nextPlaybackState = next;
+	}
+}
+
+void TwoSounds(PlaybackState next)
+{
+	SDL_Log("TwoSounds update");
+	static unsigned int counter = 0;
+	sound2.play();
+	SDL_Log("0.5 second delay...");
+	SDL_Delay(500);
+	SDL_Log("Done");
+	sound1.play();
+	counter++;
+	if (counter == 3) {
+		SDL_Log("TwoSounds finished");
+		nextPlaybackState = next;
+	}
+}
+
+void OneSoundOneMusic(PlaybackState next)
+{
+	SDL_Log("OneSoundOneMusic update");
+	static unsigned int counter = 0;
+	music1.play();
+	sound1.play();
+	counter++;
+	if (counter == 3) {
+		SDL_Log("OneSoundOneMusic finished");
+		music1.stop();
+		nextPlaybackState = next;
+	}
+}
+
+void OneMusic(PlaybackState next)
+{
+	SDL_Log("OneMusic update");
+	static unsigned int counter = 0;
+	music2.stop();
+	music1.play();
+	counter++;
+	if (counter == 2) {
+		SDL_Log("OneMusic finished");
+		music1.stop();
+		music2.stop();
+		nextPlaybackState = next;
+	}
+}
+
+void OneSound(PlaybackState next)
+{
+	SDL_Log("OneSound update");
+	static unsigned int counter = 0;
+	sound1.play();
+	counter++;
+	if (counter == 3) {
+		SDL_Log("OneSound finished");
+		nextPlaybackState = next;
+	}
+}
+
+void TheEnd()
+{
+	SDL_Log("The end");
+	music1.stop();
+}
+
+void playback() {
+
+	playbackState = nextPlaybackState;
+
+	if (playbackState == PlaybackState::TheBeginning)
+		TheBeginning(PlaybackState::TowSoundsTwoFadingMusics);
+	else if (playbackState == PlaybackState::TowSoundsTwoFadingMusics)
+		TwoSoundsTwoFadingMusics(PlaybackState::TwoFadingMusics);
+	else if (playbackState == PlaybackState::TwoFadingMusics)
+		TwoFadingMusics(PlaybackState::LoopingMusic);
+	else if (playbackState == PlaybackState::LoopingMusic)
+		LoopingMusic(PlaybackState::TwoMusicsTwoSounds);
 	else if (playbackState == PlaybackState::TwoMusicsTwoSounds)
-	{
-		SDL_Log("TwoMusicsTwoSounds");
-		static unsigned int counter4 = 0;
-		if (counter4 == 0) 
-			music3.stop();
-		music1.play();
-		music2.play();
-		sound2.play();
-		SDL_Log("0.5 second delay...");
-		SDL_Delay(500);
-		SDL_Log("Done");
-		sound1.play();
-		counter4++;
-		if (counter4 == 3)
-			playbackState = PlaybackState::TwoMusics;
-	}
-	else if (playbackState == PlaybackState::TwoMusics) {
-		SDL_Log("TwoMusics");
-		music2.stop();
-		music1.stop();
-		music2.play();
-		music1.play();
-		playbackState = PlaybackState::TwoSounds;
-	}
-	else if (playbackState == PlaybackState::TwoSounds) {
-		SDL_Log("TwoSounds");
-		static unsigned int counter3 = 0;
-		music1.stop();
-		music2.stop();
-		sound2.play();
-		SDL_Log("0.5 second delay...");
-		SDL_Delay(500);
-		SDL_Log("Done");
-		sound1.play();
-		counter3++;
-		if (counter3 == 3)
-			playbackState = PlaybackState::OneSoundOneMusic;
-	}
-	else if (playbackState == PlaybackState::OneSoundOneMusic) {
-		SDL_Log("OneSoundOneMusic");
-		static unsigned int counter2 = 0;
-		music1.play();
-		sound1.play();
-		counter2++;
-		if (counter2 == 3)
-			playbackState = PlaybackState::OneMusic;
-	}
-	else if (playbackState == PlaybackState::OneMusic) {
-		SDL_Log("OneMusic");
-		music2.stop();
-		music1.play();
-		playbackState = PlaybackState::OneSound;
-	}
-	if (playbackState == PlaybackState::OneSound) {
-		SDL_Log("OneSound");
-		static unsigned int counter1 = 0;
-		music1.stop();
-		sound1.play();
-		counter1++;
-		if (counter1 == 3)
-			playbackState = PlaybackState::TheEnd;
-	}
-	else if (playbackState == PlaybackState::TheEnd) {
-		SDL_Log("The end");
-		music1.stop();
-	}
+		TwoMusicsTwoSounds(PlaybackState::TwoMusics);
+	else if (playbackState == PlaybackState::TwoMusics)
+		TwoMusics(PlaybackState::TwoSounds);
+	else if (playbackState == PlaybackState::TwoSounds)
+		TwoSounds(PlaybackState::OneSoundOneMusic);
+	else if (playbackState == PlaybackState::OneSoundOneMusic)
+		OneSoundOneMusic(PlaybackState::OneMusic);
+	else if (playbackState == PlaybackState::OneMusic)
+		OneMusic(PlaybackState::OneSound);
+	else if (playbackState == PlaybackState::OneSound)
+		OneSound(PlaybackState::TheEnd);
+	else if (playbackState == PlaybackState::TheEnd) 
+		TheEnd();
 }
 
 float clamp(float value, float min, float max)
@@ -171,14 +262,13 @@ void fadeMusics()
 
 	fadeMusic(music1, music1Sw, volume1, volume1Increasing);
 	fadeMusic(music2, music2Sw, volume2, volume2Increasing);
-	SDL_Log("%f %f", volume1, volume2);
+	// SDL_Log("%f %f", volume1, volume2);
 }
 
 void updatePlayback()
 {
-	if (playbackState == PlaybackState::TowSoundsTwoFadingMusics || playbackState == PlaybackState::TwoFadingMusics) {
+	if (isMusicFading)
 		fadeMusics();
-	}
 }
 
 void init()
@@ -213,39 +303,11 @@ void run()
 	}
 }
 
-sb::Sound sound;
-sb::Music music;
-
-void initTest2()
-{
-	sound.load("ding.ogg");
-	music.load("orchestral.ogg");
-	music.play();
-}
-
-void updateTest2()
-{
-	if (sb::Input::isMouseGoingDown()) 
-		sound.play();
-}
-
-void runTest2()
-{
-	sb::Window window;
-	initTest2();
-
-	while (window.isOpen()) {
-		window.update();
-		updateTest2();
-		window.draw();
-	}
-}
-
 int main(int argc, char* args[])
 {
 	SDL_Log("Android JNI Audio: Build %s %s", __DATE__, __TIME__);
 	
-	runTest2();
+	run();
 
 	SDL_Log("Shutting down...");
 

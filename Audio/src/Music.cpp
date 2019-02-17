@@ -43,6 +43,8 @@ namespace sb
 
 	void Music::setVolume(float volume)
 	{
+		volume = volume < 0 ? 0 : volume > 1 ? 1 : volume;
+
 		m_musicImpl->setVolume(volume);
 	}
 
