@@ -4,6 +4,7 @@
 #include "Music.h"
 #include "Stopwatch.h"
 #include "Logger.h"
+#include "Asset.h"
 #include <iostream>
 
 enum class PlaybackState {
@@ -21,7 +22,7 @@ enum class PlaybackState {
 };
 
 PlaybackState playbackState = PlaybackState::TheBeginning;
-PlaybackState nextPlaybackState = PlaybackState::TheBeginning;
+PlaybackState nextPlaybackState = PlaybackState::OneSoundOneMusic;
 bool isMusicFading = false;
 sb::Sound sound1;
 sb::Sound sound2;
@@ -262,7 +263,6 @@ void fadeMusics()
 
 	fadeMusic(music1, music1Sw, volume1, volume1Increasing);
 	fadeMusic(music2, music2Sw, volume2, volume2Increasing);
-	// SDL_Log("%f %f", volume1, volume2);
 }
 
 void updatePlayback()
@@ -272,12 +272,12 @@ void updatePlayback()
 }
 
 void init()
-{
-	sound1.load("ding.ogg");
-	sound2.load("losing.wav");
-	music1.load("ukulele.ogg");
-	music2.load("idea.ogg");
-	music3.load("losing.ogg");
+{	
+	sound1.load(sb::Asset("ding.ogg").getFilePath());
+	sound2.load(sb::Asset("losing.wav").getFilePath());
+	music1.load(sb::Asset("ukulele.ogg").getFilePath());
+	music2.load(sb::Asset("idea.ogg").getFilePath());
+	music3.load(sb::Asset("losing.ogg").getFilePath());
 	music3.setLooping(true);
 }
 
