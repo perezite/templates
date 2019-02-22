@@ -40,13 +40,13 @@ public class MusicPlayer implements MediaPlayer.OnCompletionListener, MediaPlaye
     }
 
 	public void pause() {
-		// using mediaPlayer.pause() / mediaPlayer.resume() messes up the pitch of SoundPool for some weird reason, so we use this cheesy trick instead -.-
-		mediaPlayer.setVolume(0, 0);
+		// mediaPlayer.setVolume(0, 0);	// using mediaPlayer.resume() messes up the pitch of SoundPool for some weird reason, so we use this cheesy trick instead -.-
+		mediaPlayer.pause(); 
 	}
 
 	public void resume() {
-		// using mediaPlayer.pause() / mediaPlayer.resume() messes up the pitch of SoundPool for some weird reason, so we use this cheesy trick instead -.-
-		mediaPlayer.setVolume(1, 1);
+		// mediaPlayer.setVolume(1, 1); // using mediaPlayer.resume() messes up the pitch of SoundPool for some weird reason, so we use this cheesy trick instead -.-
+		mediaPlayer.start();
 	}
 
     public void play() throws IOException {
