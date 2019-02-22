@@ -216,11 +216,6 @@ public class SDLActivity extends Activity {
         }
 
 		Audio.pause();
-		if (isFinishing()) {
-			Log.e("SDL", "hit");
-            Audio.release();
-        }
-
         SDLActivity.handlePause();
     }
 

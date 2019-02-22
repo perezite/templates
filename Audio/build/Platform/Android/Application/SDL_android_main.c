@@ -86,7 +86,7 @@ JNIEXPORT int JNICALL Java_org_libsdl_app_SDLActivity_nativeInit(JNIEnv* env, jc
 	}
 
 	/* Do not issue an exit or the whole application will terminate instead of just the SDL thread */
-	/* Well, actually, we do it anyways, but first, we clean up  the audio*/
+	/* Well, actually, we do it anyways, but first, we clean up the audio*/
 	releaseJavaAudio(env);
 	exit(status); 
 
