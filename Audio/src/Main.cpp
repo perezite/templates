@@ -22,7 +22,7 @@ enum class PlaybackState {
 };
 
 PlaybackState playbackState = PlaybackState::TheBeginning;
-PlaybackState nextPlaybackState = PlaybackState::OneSoundOneMusic;
+PlaybackState nextPlaybackState = PlaybackState::TheBeginning;
 bool isMusicFading = false;
 sb::Sound sound1;
 sb::Sound sound2;
