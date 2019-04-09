@@ -7,8 +7,6 @@ namespace sb
 	class MusicImpl
 	{
 	public:
-		~MusicImpl();
-
 		void load(std::string assetPath);
 
 		void play();

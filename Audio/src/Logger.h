@@ -34,7 +34,7 @@ namespace sb
 	{
 	private:
 		enum class LoggerType {
-			None, Error, Warning
+			None, Error, DebugError, Warning
 		};
 
 	public:
@@ -61,13 +61,15 @@ namespace sb
 		}
 
 		std::ostream& warningIf(bool condition, bool errorInDebugMode = false) {
-			m_type = errorInDebugMode && m_isDebugMode ? LoggerType::Error : LoggerType::Warning;
+			m_type = errorInDebugMode && m_isDebugMode ? LoggerType::DebugError : LoggerType::Warning;
 			m_hasWarning = condition;
 			return m_stream;
 		}
 
 		~Logger() { 
-			if (m_type == LoggerType::Error && m_hasError) {
+			bool showError = m_type == LoggerType::Error || m_type == LoggerType::DebugError;
+			if (showError && m_hasError) {
+				std::s
 				SDL_Log("ERROR: %s", m_stream.str().c_str());
 				#ifdef WIN32
 					__debugbreak();

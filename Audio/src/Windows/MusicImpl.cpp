@@ -1,4 +1,5 @@
 #include "MusicImpl.h"
+#include "../Logger.h"
 
 // Setting ITERATOR_DEBUG_LEVEL = 0 in debug mode isn't gonny fly with SFML-Audio, so issue a warning if this were the case
 #if defined(_ITERATOR_DEBUG_LEVEL) && defined(_DEBUG)
@@ -8,14 +9,11 @@
 #endif
 
 namespace sb
-{
-	MusicImpl::~MusicImpl()
-	{
-	}
-
+{	
 	void MusicImpl::load(std::string assetPath)
 	{
-		m_music.openFromFile(assetPath);
+		if (!m_music.openFromFile(assetPath))
+			SB_ERROR() << "unable to load music track " << assetPath << std::endl;
 	}
 
 	void MusicImpl::play()
