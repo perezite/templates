@@ -69,7 +69,6 @@ namespace sb
 		~Logger() { 
 			bool showError = m_type == LoggerType::Error || m_type == LoggerType::DebugError;
 			if (showError && m_hasError) {
-				std::s
 				SDL_Log("ERROR: %s", m_stream.str().c_str());
 				#ifdef WIN32
 					__debugbreak();

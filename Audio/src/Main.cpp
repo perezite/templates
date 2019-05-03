@@ -273,11 +273,11 @@ void updatePlayback()
 
 void init()
 {	
-	sound1.load(sb::Asset("ding2.ogg").getFilePath());
-	sound2.load(sb::Asset("losing.wav").getFilePath());
+	sound1.load(sb::Asset("ding.ogg").getFilePath());
+	sound2.load(sb::Asset("dong.wav").getFilePath());
 	music1.load(sb::Asset("ukulele.ogg").getFilePath());
-	music2.load(sb::Asset("idea.ogg").getFilePath());
-	music3.load(sb::Asset("losing.ogg").getFilePath());
+	music2.load(sb::Asset("magic.ogg").getFilePath());
+	music3.load(sb::Asset("ukuleleLow.ogg").getFilePath());
 	music3.setLooping(true);
 }
 
